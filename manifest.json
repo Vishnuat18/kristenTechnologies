@@ -1,0 +1,21 @@
+{
+    "name": "Kristen Technologies",
+    "short_name": "KristenTech",
+    "description": "Innovative software and hardware solutions.",
+    "start_url": "/index.php",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#0B3D91",
+    "icons": [
+        {
+            "src": "images/favicon.ico",
+            "sizes": "64x64",
+            "type": "image/x-icon"
+        },
+        {
+            "src": "images/kristen_logo.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

@@ -1,0 +1,154 @@
+﻿/* Dark Theme CSS */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+/* Global clean font */
+body {
+    font-family: 'Outfit', sans-serif !important;
+}
+
+/* Base Dark Theme Colors */
+body.dark {
+    background-color: #0d1117 !important;
+    color: #94a3b8 !important;
+}
+
+body.dark h1, body.dark h2, body.dark h3, body.dark h4, body.dark h5, body.dark h6 {
+    color: #f8fafc !important;
+}
+
+body.dark p, body.dark span, body.dark div {
+    color: inherit;
+}
+
+body.dark a {
+    color: #f8fafc;
+    transition: color 0.3s ease;
+}
+
+body.dark a:hover {
+    color: #bef264 !important;
+}
+
+/* Green Highlight Accent */
+body.dark .highlight-green {
+    color: #bef264 !important;
+    font-weight: bold;
+}
+
+/* Header */
+body.dark header {
+    background-color: #0d1117 !important;
+}
+
+body.dark header.hh {
+    background-color: rgba(13, 17, 23, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #1e293b !important;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+body:not(.dark) .theme-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.theme-toggle svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+
+
+body.dark .ek.jk.lk.gh.gi.hi.rg.ml.il.vc._d._l:hover {
+    background-color: #a3e635 !important;
+    transform: translateY(-2px);
+}
+
+/* Secondary Button like Build PC (if it uses the same class, we can override or just let it be green) */
+body.dark a[href="/build_pc"] {
+    background-color: transparent !important;
+    color: #bef264 !important;
+    border: 1px solid #bef264 !important;
+}
+
+body.dark a[href="/build_pc"]:hover {
+    background-color: #bef264 !important;
+    color: #0f172a !important;
+}
+
+/* Cards / Service Items */
+body.dark .sg.oi.pi.zq.ml.il.am.cn._m,
+body.dark .i.hh.rm.sg.vk.xm.bi.qj,
+body.dark .tc.cg.oq,
+body.dark .fb,
+body.dark .bg-white {
+    background-color: #161b22 !important;
+    border: 1px solid #30363d !important;
+    box-shadow: none !important;
+    border-radius: 16px !important;
+    color: #94a3b8 !important;
+}
+
+body.dark .tc.cg.oq:hover,
+body.dark .sg.oi.pi.zq.ml.il.am.cn._m:hover {
+    border-color: #bef264 !important;
+}
+
+/* Specific elements inside cards to ensure text colors */
+body.dark .sg.oi.pi.zq.ml.il.am.cn._m p,
+body.dark .i.hh.rm.sg.vk.xm.bi.qj p,
+body.dark .fb p {
+    color: #94a3b8 !important;
+}
+
+/* Icons background in cards */
+body.dark .tc.wf.xf.cf.ae.cd.rg.mh,
+body.dark .tc.wf.xf.cf.ae.cd.rg.nh,
+body.dark .tc.wf.xf.cf.ae.cd.rg.oh,
+body.dark .mn\/5 .fb {
+    background-color: #1f2937 !important;
+}
+
+/* Numbers in stats */
+body.dark .gk.vj.zp.or.kk.wm.hc {
+    color: #bef264 !important;
+}
+
+/* Forms */
+body.dark input, body.dark textarea {
+    background-color: #0d1117 !important;
+    color: #f8fafc !important;
+    border: 1px solid #30363d !important;
+}
+
+body.dark input:focus, body.dark textarea:focus {
+    border-color: #bef264 !important;
+    outline: none !important;
+}
+
+body.dark label {
+    color: #cbd5e1 !important;
+}
+
+/* Logos inversion */
+body.dark .tk.ml.il.zl.om {
+    filter: brightness(0) invert(1);
+}
+
