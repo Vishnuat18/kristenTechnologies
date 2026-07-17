@@ -84,12 +84,60 @@
                 z-index: 1;
             }
         }
+    
+        
+        /* Typography System (Responsive) */
+        @layer base {
+            h1, .text-h1 { font-size: 34px; line-height: 1.2; }
+            @media (min-width: 768px) { h1, .text-h1 { font-size: 46px; } }
+            @media (min-width: 1024px) { h1, .text-h1 { font-size: 64px; } }
+
+            h2, .text-h2 { font-size: 28px; line-height: 1.3; }
+            @media (min-width: 768px) { h2, .text-h2 { font-size: 34px; } }
+            @media (min-width: 1024px) { h2, .text-h2 { font-size: 42px; } }
+
+            p, .text-p { font-size: 15px; }
+            @media (min-width: 768px) { p, .text-p { font-size: 16px; } }
+            @media (min-width: 1024px) { p, .text-p { font-size: 18px; } }
+            
+            /* Responsive Utilities */
+            .section-padding { padding-top: 56px; padding-bottom: 56px; }
+            @media (min-width: 768px) { .section-padding { padding-top: 80px; padding-bottom: 80px; } }
+            @media (min-width: 1024px) { .section-padding { padding-top: 120px; padding-bottom: 120px; } }
+            
+            .card-gap { gap: 20px; }
+            @media (min-width: 768px) { .card-gap { gap: 24px; } }
+            @media (min-width: 1024px) { .card-gap { gap: 32px; } }
+        }
+
+        /* Mobile/Tablet Simple Radial Gradient */
+        @media (max-width: 1023px) {
+            body.dark::before, body.dark::after {
+                display: none !important;
+            }
+            body {
+                background: radial-gradient(circle at top, rgba(20,120,255,.08), transparent 70%);
+            }
+            .blob-bg {
+                display: none !important;
+            }
+        }
+
     </style>
     <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
+                    animation: {
+                        'marquee': 'marquee 25s linear infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        }
+                    },
                     colors: {
                         // Semantic variables
                         'primary': 'var(--color-primary)',
@@ -207,7 +255,7 @@
     <div x-show="isTransitioning" x-transition.opacity.duration.100ms
         class="fixed inset-0 bg-[#0A0D0A] z-[9999] pointer-events-none" style="display: none;"></div>
     <!-- BEGIN: MainHeader -->
-    <header
+    <header x-data="{ drawerOpen: false }"
         class="fixed top-0 w-full z-50 bg-white/90 dark:bg-[#0A0D0A]/40 backdrop-blur-md border-b border-gray-100 dark:border-border transition-colors duration-300"
         data-purpose="header">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -237,8 +285,7 @@
 
             <!-- Theme Toggle & CTA (Right) -->
             <div class="flex items-center gap-4">
-                <button @click="toggleTheme()"
-                    class="relative inline-flex items-center h-8 rounded-full w-14 transition-colors duration-300 focus:outline-none"
+                <button @click="toggleTheme()" class="hidden md:inline-flex relative items-center h-8 rounded-full w-14 transition-colors duration-300 focus:outline-none"
                     :class="darkMode ? 'bg-[#131713]' : 'bg-gray-200'">
                     <span class="sr-only">Toggle Theme</span>
                     <span
@@ -264,7 +311,91 @@
                     class="hidden md:flex bg-[#0B3D91] dark:bg-white text-white dark:text-[#0A0D0A] px-6 py-2.5 rounded-full font-bold items-center gap-2 hover:opacity-90 transition-all text-sm shadow-sm">
                     Get Started <span class="text-xs font-bold">&#8599;</span>
                 </a>
+            
+                <!-- Mobile Menu Button -->
+                <button @click="drawerOpen = true" class="md:hidden p-2 text-gray-800 dark:text-white focus:outline-none">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+                            <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+                            <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
+                            <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
+                        </svg>
+                </button>
             </div>
+            
+            
+            <!-- Mobile Slide Drawer -->
+            <template x-teleport="body">
+            <div x-show="drawerOpen" style="display: none;" class="fixed inset-0 z-[100] md:hidden">
+                <!-- Backdrop -->
+                <div x-show="drawerOpen" x-transition.opacity.duration.300ms @click="drawerOpen = false" class="absolute inset-0 bg-black/60 backdrop-blur-md"></div>
+                
+                <!-- Drawer Content -->
+                <div x-show="drawerOpen" 
+                     x-transition:enter="transition ease-out duration-320"
+                     x-transition:enter-start="translate-x-full"
+                     x-transition:enter-end="translate-x-0"
+                     x-transition:leave="transition ease-in duration-320"
+                     x-transition:leave-start="translate-x-0"
+                     x-transition:leave-end="translate-x-full"
+                     class="absolute right-0 top-0 bottom-0 w-[300px] bg-white/95 dark:bg-[#0A0D0A]/95 shadow-2xl flex flex-col pt-16 px-5 pb-6 overflow-y-auto">
+                     
+                     <div class="flex justify-between items-center mb-6">
+                        <span class="font-bold text-lg text-brandNavy dark:text-white uppercase tracking-widest">Menu</span>
+                        <button @click="drawerOpen = false" class="text-gray-500 dark:text-gray-400 p-2 bg-gray-100 dark:bg-surface rounded-full">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        </button>
+                     </div>
+                     
+                     <!-- Bento Grid Menu -->
+                     <nav class="grid grid-cols-2 gap-3 mb-6">
+                         <a href="index.php" class="col-span-1 bg-gray-50 dark:bg-surface border border-gray-100 dark:border-white/5 rounded-2xl p-4 flex flex-col items-center justify-center gap-2 hover:bg-brandNavy hover:text-white dark:hover:bg-[#39FF7A] dark:hover:text-[#0A0D0A] transition-colors text-brandNavy dark:text-white font-semibold">
+                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                             <span>Home</span>
+                         </a>
+                         <a href="about.php" class="col-span-1 bg-gray-50 dark:bg-surface border border-gray-100 dark:border-white/5 rounded-2xl p-4 flex flex-col items-center justify-center gap-2 hover:bg-brandNavy hover:text-white dark:hover:bg-[#39FF7A] dark:hover:text-[#0A0D0A] transition-colors text-brandNavy dark:text-white font-semibold">
+                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                             <span>About</span>
+                         </a>
+                         <a href="services.php" class="col-span-1 bg-gray-50 dark:bg-surface border border-gray-100 dark:border-white/5 rounded-2xl p-4 flex flex-col items-center justify-center gap-2 hover:bg-brandNavy hover:text-white dark:hover:bg-[#39FF7A] dark:hover:text-[#0A0D0A] transition-colors text-brandNavy dark:text-white font-semibold">
+                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                             <span>Services</span>
+                         </a>
+                         <a href="careers.php" class="col-span-1 bg-gray-50 dark:bg-surface border border-gray-100 dark:border-white/5 rounded-2xl p-4 flex flex-col items-center justify-center gap-2 hover:bg-brandNavy hover:text-white dark:hover:bg-[#39FF7A] dark:hover:text-[#0A0D0A] transition-colors text-brandNavy dark:text-white font-semibold">
+                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                             <span>Careers</span>
+                         </a>
+                         <a href="contact.php" class="col-span-2 bg-gray-50 dark:bg-surface border border-gray-100 dark:border-white/5 rounded-2xl p-4 flex items-center gap-4 hover:bg-brandNavy hover:text-white dark:hover:bg-[#39FF7A] dark:hover:text-[#0A0D0A] transition-colors text-brandNavy dark:text-white font-semibold">
+                             <div class="p-2 bg-white dark:bg-[#131713] rounded-full"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></div>
+                             <span>Contact Us</span>
+                         </a>
+                         <a href="https://mail.kristenbytes.com" class="col-span-2 bg-gray-50 dark:bg-surface border border-gray-100 dark:border-white/5 rounded-2xl p-4 flex items-center gap-4 hover:bg-brandNavy hover:text-white dark:hover:bg-[#39FF7A] dark:hover:text-[#0A0D0A] transition-colors text-brandNavy dark:text-white font-semibold">
+                             <div class="p-2 bg-white dark:bg-[#131713] rounded-full"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg></div>
+                             <span>Employee Login</span>
+                         </a>
+                         
+                         <!-- Theme Toggle Bento Item -->
+                         <div class="col-span-2 bg-gray-50 dark:bg-surface border border-gray-100 dark:border-white/5 rounded-2xl p-4 flex items-center justify-between">
+                            <span class="font-semibold text-brandNavy dark:text-white flex items-center gap-2">
+                                <svg x-show="!darkMode" class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                                <svg x-show="darkMode" x-cloak class="w-5 h-5 text-[#39FF7A]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                                Theme
+                            </span>
+                            <button @click="toggleTheme()" class="relative inline-flex items-center h-8 rounded-full w-14 transition-colors duration-300 focus:outline-none" :class="darkMode ? 'bg-[#131713]' : 'bg-gray-300'">
+                                <span class="sr-only">Toggle Theme</span>
+                                <span class="inline-block w-6 h-6 transform bg-white rounded-full transition-transform duration-300 flex items-center justify-center shadow" :class="darkMode ? 'translate-x-7' : 'translate-x-1'"></span>
+                            </button>
+                         </div>
+                     </nav>
+                     
+                     <div class="mt-auto">
+                        <a href="contact.php" class="flex justify-center w-full h-[52px] bg-[#0B3D91] dark:bg-[#39FF7A] text-white dark:text-[#0A0D0A] rounded-full font-bold items-center gap-2">
+                            Get Started &#8599;
+                        </a>
+                     </div>
+                </div>
+            </div>
+            </template>
         </div>
     </header>
     <!-- END: MainHeader -->

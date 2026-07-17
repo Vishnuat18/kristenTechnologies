@@ -11,7 +11,7 @@ require_once 'includes/header.php';
             data-purpose="hero-section">
 
             <!-- Vector Background Graphics -->
-            <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
+            <div class="absolute inset-0 pointer-events-none overflow-hidden z-0 hidden md:block">
                 <!-- Soft Mesh Gradient -->
                 <div class="absolute inset-0 bg-gradient-to-br from-[#EEF5FF] via-transparent to-[#F8FAFC] dark:from-[#132c1c]/10 dark:via-transparent dark:to-[#0B3D91]/10 opacity-60"></div>
                 <!-- Background Image (Light/Dark Switch) -->
@@ -38,25 +38,25 @@ require_once 'includes/header.php';
                         KRISTEN<br /><span class="text-brandGreen dark:text-[#39FF7A]">TECHNOLOGIES</span>
                     </h1>
 
-                    <p
+                                        <p
                         class="text-[#0B3D91] dark:text-[#4A90E2] font-bold tracking-widest text-sm transition-colors uppercase drop-shadow-md">
                         BUILDING SOLUTIONS. <span class="text-brandGreen dark:text-[#39FF7A]">DELIVERING TRUST.</span>
                     </p>
 
                     <p
-                        class="text-gray-800 dark:text-[#9CA39C] max-w-2xl mx-auto text-lg leading-relaxed transition-colors drop-shadow-md font-medium">
+                        class="text-gray-800 dark:text-[#9CA39C] max-w-2xl mx-auto text-lg leading-relaxed transition-colors drop-shadow-md font-medium px-4">
                         We provide smart, reliable and scalable IT solutions that help businesses grow and achieve more
                         every day.
                     </p>
 
-                    <div class="flex flex-wrap items-center justify-center gap-6 pt-4">
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 pt-4 w-full px-4 sm:px-0">
                         <button
-                            class="bg-[#0B3D91] text-white dark:bg-[#39FF7A] dark:text-black dark:hover:bg-[#2ed663] px-8 py-4 rounded-full font-bold flex items-center gap-3 hover:opacity-90 transition shadow-lg">
+                            class="w-full sm:w-auto justify-center bg-[#0B3D91] text-white dark:bg-[#39FF7A] dark:text-black dark:hover:bg-[#2ed663] px-8 py-4 rounded-full font-bold flex items-center gap-3 hover:opacity-90 transition shadow-lg">
                             Explore Services <span class="transform rotate-[-45deg] inline-block">&#8594;</span>
                         </button>
 
                         <a href="careers.php"
-                            class="bg-[#0B3D91] text-white dark:bg-[#39FF7A] dark:text-black dark:hover:bg-[#2ed663] px-8 py-4 rounded-full font-bold flex items-center gap-3 hover:opacity-90 transition shadow-lg">
+                            class="w-full sm:w-auto justify-center bg-[#0B3D91] text-white dark:bg-[#39FF7A] dark:text-black dark:hover:bg-[#2ed663] px-8 py-4 rounded-full font-bold flex items-center gap-3 hover:opacity-90 transition shadow-lg">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
                                     d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -68,6 +68,7 @@ require_once 'includes/header.php';
 
             </div>
         </section>
+
         <!-- END: HeroSection -->
 
         <!-- BEGIN: Custom PC Card -->
@@ -228,7 +229,7 @@ require_once 'includes/header.php';
                         </div>
 
                         <!-- BEGIN: Stats Cards inside Why Choose Us -->
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
                             <!-- Stat Card 1 -->
                             <div class="bg-slate-50 dark:bg-[#111512] rounded-2xl p-5 flex items-center gap-4 border border-gray-100 dark:border-white/[0.03] transition-colors">
                                 <div class="w-14 h-14 rounded-full flex-shrink-0 flex items-center justify-center bg-brandGreen/10 dark:bg-[#152e22]/90 border border-brandGreen/20 dark:border-[#2d5c3f] relative overflow-hidden">
@@ -677,43 +678,77 @@ require_once 'includes/header.php';
                 We offer high-quality, affordable CCTV camera installation, setup, and maintenance services across
                 Salem. Whether you need a single-camera setup or a full surveillance system, we've got you covered.
             </p>
-            <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-7 gap-4">
-                <!-- HIKVISION -->
-                <div class="bg-slate-50 dark:bg-white/95 rounded-2xl flex items-center justify-center p-3 h-16 md:h-20 lg:h-24 hover:scale-105 transition-transform duration-300 shadow-sm dark:shadow-none">
-                    <img src="images/logos/logo1.png" alt="Hikvision" class="max-h-full max-w-full object-contain mix-blend-multiply" / loading="lazy" decoding="async">
-                </div>
+            
+            <div class="w-full flex overflow-hidden group space-x-6 relative">
+                <div class="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white dark:from-[#0A0D0A] to-transparent z-10"></div>
+                <div class="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white dark:from-[#0A0D0A] to-transparent z-10"></div>
+                
+                <div class="flex space-x-6 animate-marquee group-hover:[animation-play-state:paused] whitespace-nowrap py-4 shrink-0">
 
-                <!-- CP PLUS -->
-                <div class="bg-slate-50 dark:bg-white/95 rounded-2xl flex items-center justify-center p-3 h-16 md:h-20 lg:h-24 hover:scale-105 transition-transform duration-300 shadow-sm dark:shadow-none">
-                    <img src="images/logos/logo2.jpeg" alt="CP Plus" class="max-h-full max-w-full object-contain mix-blend-multiply" / loading="lazy" decoding="async">
-                </div>
+                    <!-- HIKVISION -->
+                    <div class="bg-slate-50 dark:bg-white/95 rounded-2xl flex items-center justify-center p-3 h-16 md:h-20 lg:h-24 shadow-sm dark:shadow-none min-w-[150px]">
+                        <img src="images/logos/logo1.png" alt="Hikvision" class="max-h-full max-w-full object-contain mix-blend-multiply" loading="lazy" decoding="async">
+                    </div>
+                    <!-- CP PLUS -->
+                    <div class="bg-slate-50 dark:bg-white/95 rounded-2xl flex items-center justify-center p-3 h-16 md:h-20 lg:h-24 shadow-sm dark:shadow-none min-w-[150px]">
+                        <img src="images/logos/logo2.jpeg" alt="CP Plus" class="max-h-full max-w-full object-contain mix-blend-multiply" loading="lazy" decoding="async">
+                    </div>
+                    <!-- ACURAA -->
+                    <div class="bg-slate-50 dark:bg-white/95 rounded-2xl flex items-center justify-center p-3 h-16 md:h-20 lg:h-24 shadow-sm dark:shadow-none min-w-[150px]">
+                        <img src="images/logos/logo3.png" alt="Acuraa" class="max-h-full max-w-full object-contain mix-blend-multiply" loading="lazy" decoding="async">
+                    </div>
+                    <!-- Dahua -->
+                    <div class="bg-slate-50 dark:bg-white/95 rounded-2xl flex items-center justify-center p-3 h-16 md:h-20 lg:h-24 shadow-sm dark:shadow-none min-w-[150px]">
+                        <img src="images/logos/logo4.png" alt="Dahua" class="max-h-full max-w-full object-contain mix-blend-multiply" loading="lazy" decoding="async">
+                    </div>
+                    <!-- LOGO 5 -->
+                    <div class="bg-slate-50 dark:bg-white/95 rounded-2xl flex items-center justify-center p-3 h-16 md:h-20 lg:h-24 shadow-sm dark:shadow-none min-w-[150px]">
+                        <img src="images/logo5.png" alt="Brand Logo" class="max-h-full max-w-full object-contain mix-blend-multiply" loading="lazy" decoding="async">
+                    </div>
+                    <!-- Trueview -->
+                    <div class="bg-slate-50 dark:bg-white/95 rounded-2xl flex items-center justify-center p-3 h-16 md:h-20 lg:h-24 shadow-sm dark:shadow-none min-w-[150px]">
+                        <img src="images/logos/logo6.png" alt="Trueview" class="max-h-full max-w-full object-contain mix-blend-multiply" loading="lazy" decoding="async">
+                    </div>
+                    <!-- HI-FOCUS -->
+                    <div class="bg-slate-50 dark:bg-white/95 rounded-2xl flex items-center justify-center p-3 h-16 md:h-20 lg:h-24 shadow-sm dark:shadow-none min-w-[150px]">
+                        <img src="images/logos/logo7.png" alt="Hi-Focus" class="max-h-full max-w-full object-contain mix-blend-multiply" loading="lazy" decoding="async">
+                    </div>
 
-                <!-- ACURAA -->
-                <div class="bg-slate-50 dark:bg-white/95 rounded-2xl flex items-center justify-center p-3 h-16 md:h-20 lg:h-24 hover:scale-105 transition-transform duration-300 shadow-sm dark:shadow-none">
-                    <img src="images/logos/logo3.png" alt="Acuraa" class="max-h-full max-w-full object-contain mix-blend-multiply" / loading="lazy" decoding="async">
                 </div>
+                <div class="flex space-x-6 animate-marquee group-hover:[animation-play-state:paused] whitespace-nowrap py-4 shrink-0" aria-hidden="true">
 
-                <!-- Dahua -->
-                <div class="bg-slate-50 dark:bg-white/95 rounded-2xl flex items-center justify-center p-3 h-16 md:h-20 lg:h-24 hover:scale-105 transition-transform duration-300 shadow-sm dark:shadow-none">
-                    <img src="images/logos/logo4.png" alt="Dahua" class="max-h-full max-w-full object-contain mix-blend-multiply" / loading="lazy" decoding="async">
-                </div>
+                    <!-- HIKVISION -->
+                    <div class="bg-slate-50 dark:bg-white/95 rounded-2xl flex items-center justify-center p-3 h-16 md:h-20 lg:h-24 shadow-sm dark:shadow-none min-w-[150px]">
+                        <img src="images/logos/logo1.png" alt="Hikvision" class="max-h-full max-w-full object-contain mix-blend-multiply" loading="lazy" decoding="async">
+                    </div>
+                    <!-- CP PLUS -->
+                    <div class="bg-slate-50 dark:bg-white/95 rounded-2xl flex items-center justify-center p-3 h-16 md:h-20 lg:h-24 shadow-sm dark:shadow-none min-w-[150px]">
+                        <img src="images/logos/logo2.jpeg" alt="CP Plus" class="max-h-full max-w-full object-contain mix-blend-multiply" loading="lazy" decoding="async">
+                    </div>
+                    <!-- ACURAA -->
+                    <div class="bg-slate-50 dark:bg-white/95 rounded-2xl flex items-center justify-center p-3 h-16 md:h-20 lg:h-24 shadow-sm dark:shadow-none min-w-[150px]">
+                        <img src="images/logos/logo3.png" alt="Acuraa" class="max-h-full max-w-full object-contain mix-blend-multiply" loading="lazy" decoding="async">
+                    </div>
+                    <!-- Dahua -->
+                    <div class="bg-slate-50 dark:bg-white/95 rounded-2xl flex items-center justify-center p-3 h-16 md:h-20 lg:h-24 shadow-sm dark:shadow-none min-w-[150px]">
+                        <img src="images/logos/logo4.png" alt="Dahua" class="max-h-full max-w-full object-contain mix-blend-multiply" loading="lazy" decoding="async">
+                    </div>
+                    <!-- LOGO 5 -->
+                    <div class="bg-slate-50 dark:bg-white/95 rounded-2xl flex items-center justify-center p-3 h-16 md:h-20 lg:h-24 shadow-sm dark:shadow-none min-w-[150px]">
+                        <img src="images/logo5.png" alt="Brand Logo" class="max-h-full max-w-full object-contain mix-blend-multiply" loading="lazy" decoding="async">
+                    </div>
+                    <!-- Trueview -->
+                    <div class="bg-slate-50 dark:bg-white/95 rounded-2xl flex items-center justify-center p-3 h-16 md:h-20 lg:h-24 shadow-sm dark:shadow-none min-w-[150px]">
+                        <img src="images/logos/logo6.png" alt="Trueview" class="max-h-full max-w-full object-contain mix-blend-multiply" loading="lazy" decoding="async">
+                    </div>
+                    <!-- HI-FOCUS -->
+                    <div class="bg-slate-50 dark:bg-white/95 rounded-2xl flex items-center justify-center p-3 h-16 md:h-20 lg:h-24 shadow-sm dark:shadow-none min-w-[150px]">
+                        <img src="images/logos/logo7.png" alt="Hi-Focus" class="max-h-full max-w-full object-contain mix-blend-multiply" loading="lazy" decoding="async">
+                    </div>
 
-                <!-- LOGO 5 -->
-                <div class="bg-slate-50 dark:bg-white/95 rounded-2xl flex items-center justify-center p-3 h-16 md:h-20 lg:h-24 hover:scale-105 transition-transform duration-300 shadow-sm dark:shadow-none">
-                    <img src="images/logo5.png" alt="Brand Logo" class="max-h-full max-w-full object-contain mix-blend-multiply" / loading="lazy" decoding="async">
-                </div>
-
-                <!-- Trueview -->
-                <div class="bg-slate-50 dark:bg-white/95 rounded-2xl flex items-center justify-center p-3 h-16 md:h-20 lg:h-24 hover:scale-105 transition-transform duration-300 shadow-sm dark:shadow-none">
-                    <img src="images/logos/logo6.png" alt="Trueview" class="max-h-full max-w-full object-contain mix-blend-multiply" / loading="lazy" decoding="async">
-                </div>
-
-                <!-- HI-FOCUS -->
-                <div class="bg-slate-50 dark:bg-white/95 rounded-2xl flex items-center justify-center p-3 h-16 md:h-20 lg:h-24 hover:scale-105 transition-transform duration-300 shadow-sm dark:shadow-none">
-                    <img src="images/logos/logo7.png" alt="Hi-Focus" class="max-h-full max-w-full object-contain mix-blend-multiply" / loading="lazy" decoding="async">
                 </div>
             </div>
-        </section>
+</section>
         <!-- END: BrandStrip -->
         <!-- BEGIN: ContactSection -->
         <section class="max-w-7xl mx-auto px-6 py-12 transition-colors duration-300" data-purpose="contact-section">

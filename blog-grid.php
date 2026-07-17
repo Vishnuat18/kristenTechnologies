@@ -14,12 +14,23 @@ try {
 ?>
 
 
-    <main class="pt-32 pb-16">
-        <div class="max-w-7xl mx-auto px-6">
+    <main class="pb-16">
+
+        <!-- BEGIN: Premium Header -->
+        <section class="relative w-full overflow-hidden bg-transparent transition-colors duration-300 pt-32 pb-16" data-purpose="hero-section">
+            <div class="absolute inset-0 pointer-events-none overflow-hidden z-0 hidden md:block">
+                <div class="absolute inset-0 bg-gradient-to-br from-[#EEF5FF] via-transparent to-[#F8FAFC] dark:from-[#132c1c]/10 dark:via-transparent dark:to-[#0B3D91]/10 opacity-60"></div>
+            </div>
+            <div class="relative z-10 w-full">
+        
             <header class="text-center mb-16">
                 <h1 class="text-4xl md:text-5xl font-extrabold text-brandNavy dark:text-white font-serif mb-4 tracking-tight">Latest Insights & News</h1>
                 <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Stay up to date with the latest trends, tips, and updates in technology, design, and our services.</p>
             </header>
+            </div>
+        </section>
+        <!-- END: Premium Header -->
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <?php if (empty($blogs)): ?>

@@ -9,7 +9,7 @@ require_once 'includes/header.php';
         <!-- BEGIN: Services Hero -->
         <section class="relative w-full overflow-hidden bg-transparent transition-colors duration-300 min-h-screen flex items-center" data-purpose="hero-section">
             <!-- Vector Background Graphics -->
-            <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
+            <div class="absolute inset-0 pointer-events-none overflow-hidden z-0 hidden md:block">
                 <!-- Soft Mesh Gradient -->
                 <div class="absolute inset-0 bg-gradient-to-br from-[#EEF5FF] via-transparent to-[#F8FAFC] dark:from-[#132c1c]/10 dark:via-transparent dark:to-[#0B3D91]/10 opacity-60"></div>
                 <!-- Background Image (Light/Dark Switch) -->
@@ -32,10 +32,10 @@ require_once 'includes/header.php';
         </section>
         
         <!-- BEGIN: Services Grid -->
-        <section class="max-w-6xl mx-auto px-8 md:px-12 py-16 space-y-24">
+        <section class="max-w-6xl mx-auto px-6 md:px-8 lg:px-12 py-10 lg:py-16 space-y-16 lg:space-y-24">
             
             <!-- Service 1: Computer & Laptop Services -->
-            <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+            <div class="flex flex-col-reverse lg:flex-row gap-12 lg:gap-20 items-center">
                 <!-- Text Column (Left) -->
                 <div class="flex-1 space-y-6">
                     <div class="flex items-center gap-3">
@@ -92,7 +92,7 @@ require_once 'includes/header.php';
             </div>
             
             <!-- Service 2: Data Recovery -->
-            <div class="flex flex-col lg:flex-row-reverse gap-12 lg:gap-20 items-center">
+            <div class="flex flex-col-reverse lg:flex-row-reverse gap-12 lg:gap-20 items-center">
                 <!-- Text Column (Right) -->
                 <div class="flex-1 space-y-6">
                     <div class="flex items-center gap-3">
@@ -149,7 +149,7 @@ require_once 'includes/header.php';
             </div>
             
             <!-- Service 3: Network Services -->
-            <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+            <div class="flex flex-col-reverse lg:flex-row gap-12 lg:gap-20 items-center">
                 <!-- Text Column (Left) -->
                 <div class="flex-1 space-y-6">
                     <div class="flex items-center gap-3">
@@ -206,7 +206,7 @@ require_once 'includes/header.php';
             </div>
             
             <!-- Service 4: CCTV Installation -->
-            <div class="flex flex-col lg:flex-row-reverse gap-12 lg:gap-20 items-center">
+            <div class="flex flex-col-reverse lg:flex-row-reverse gap-12 lg:gap-20 items-center">
                 <!-- Text Column (Right) -->
                 <div class="flex-1 space-y-6">
                     <div class="flex items-center gap-3">
@@ -263,7 +263,7 @@ require_once 'includes/header.php';
             </div>
             
             <!-- Service 5: Printer & Toner Services -->
-            <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+            <div class="flex flex-col-reverse lg:flex-row gap-12 lg:gap-20 items-center">
                 <!-- Text Column (Left) -->
                 <div class="flex-1 space-y-6">
                     <div class="flex items-center gap-3">
@@ -320,7 +320,7 @@ require_once 'includes/header.php';
             </div>
             
             <!-- Service 6: AMC Services -->
-            <div class="flex flex-col lg:flex-row-reverse gap-12 lg:gap-20 items-center">
+            <div class="flex flex-col-reverse lg:flex-row-reverse gap-12 lg:gap-20 items-center">
                 <!-- Text Column (Right) -->
                 <div class="flex-1 space-y-6">
                     <div class="flex items-center gap-3">

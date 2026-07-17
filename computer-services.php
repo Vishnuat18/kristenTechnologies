@@ -5,8 +5,15 @@ require_once 'includes/header.php';
 ?>
 
 
-    <main class="pt-32 pb-16">
-        <div class="max-w-4xl mx-auto px-6">
+    <main class="pb-16">
+
+        <!-- BEGIN: Premium Header -->
+        <section class="relative w-full overflow-hidden bg-transparent transition-colors duration-300 pt-32 pb-16" data-purpose="hero-section">
+            <div class="absolute inset-0 pointer-events-none overflow-hidden z-0 hidden md:block">
+                <div class="absolute inset-0 bg-gradient-to-br from-[#EEF5FF] via-transparent to-[#F8FAFC] dark:from-[#132c1c]/10 dark:via-transparent dark:to-[#0B3D91]/10 opacity-60"></div>
+            </div>
+            <div class="relative z-10 w-full">
+        
             <a href="services.php" class="inline-flex items-center gap-2 text-sm font-semibold text-brandNavy dark:text-emerald-accent hover:underline mb-8 transition-colors">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
                 Back to Services
@@ -22,6 +29,10 @@ require_once 'includes/header.php';
                         At <strong>Kristen Byte Solutions</strong>, we offer <strong>end-to-end maintenance</strong> services for <strong>computers, laptops, printers, and all connected devices</strong>. Whether you’re dealing with hardware malfunctions, slow performance, or network issues, our experienced technicians are here to ensure your technology runs smoothly.
                     </p>
                 </header>
+            </div>
+        </section>
+        <!-- END: Premium Header -->
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
 
                 <div class="space-y-12">
                     

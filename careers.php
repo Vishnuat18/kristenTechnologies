@@ -19,7 +19,7 @@ try {
         <!-- BEGIN: Careers Hero -->
         <section class="relative w-full overflow-hidden bg-transparent transition-colors duration-300 min-h-screen flex items-center" data-purpose="hero-section">
             <!-- Vector Background Graphics -->
-            <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
+            <div class="absolute inset-0 pointer-events-none overflow-hidden z-0 hidden md:block">
                 <!-- Soft Mesh Gradient -->
                 <div class="absolute inset-0 bg-gradient-to-br from-[#EEF5FF] via-transparent to-[#F8FAFC] dark:from-[#132c1c]/10 dark:via-transparent dark:to-[#0B3D91]/10 opacity-60"></div>
                 <!-- Background Image (Light/Dark Switch) -->
@@ -119,23 +119,25 @@ try {
                     </div>
                     
                     <!-- Jobs list (strictly underlines, no boxed container) -->
-                    <div class="space-y-0 pt-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
                         <?php if (empty($jobs)): ?>
                             <p class="text-gray-500 py-4">No open positions currently available. Please check back later!</p>
                         <?php else: ?>
                             <?php foreach ($jobs as $job): ?>
                                 <!-- Job -->
-                                <div class="group flex items-center justify-between py-6 border-b border-gray-150 dark:border-white/[0.08] transition-all duration-300">
-                                    <div>
+                                <div class="group flex flex-col justify-between p-6 border border-gray-150 dark:border-white/[0.08] rounded-2xl bg-white dark:bg-[#111512] shadow-sm hover:shadow-md transition-all duration-300">
+                                    <div class="mb-4">
                                         <h3 class="font-extrabold text-[#0B3D91] dark:text-white text-base md:text-lg group-hover:text-[#22C55E] dark:group-hover:text-[#39FF7A] transition-colors"><?= htmlspecialchars($job['title']) ?></h3>
                                         <p class="text-xs text-gray-500 dark:text-[#9CA39C] mt-1"><?= htmlspecialchars($job['location']) ?> • <?= htmlspecialchars($job['type']) ?></p>
                                     </div>
+                                    <div class="flex justify-end">
                                     <button type="button" @click.prevent="isApplyModalOpen = true; applyJobTitle = '<?= htmlspecialchars($job['title'], ENT_QUOTES) ?>'" class="w-10 h-10 rounded-full border border-gray-200 dark:border-white/[0.08] bg-white dark:bg-[#111512] flex items-center justify-center text-gray-700 dark:text-gray-300 group-hover:text-white dark:group-hover:text-[#0A0D0A] group-hover:bg-[#22C55E] dark:group-hover:bg-[#39FF7A] group-hover:border-[#22C55E] dark:group-hover:border-[#39FF7A] shadow-sm hover:scale-105 transition-all duration-300 cursor-pointer">
                                         <!-- Up-Right Arrow -->
                                         <svg class="w-4 h-4 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"></path>
                                         </svg>
                                     </button>
+                                    </div>
                                 </div>
                             <?php endforeach; ?>
                         <?php endif; ?>
@@ -208,8 +210,8 @@ try {
                     
                     <div class="flex flex-col md:flex-row items-center justify-between gap-6 pt-4">
                         <!-- Custom File Upload Button -->
-                        <div class="flex items-center gap-4 w-full md:w-auto">
-                            <label class="cursor-pointer inline-flex items-center justify-center gap-2 bg-[#22C55E] dark:bg-[#39FF7A] text-white dark:text-[#0A0D0A] px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-wider hover:opacity-90 transition-all">
+                        <div class="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
+                            <label class="w-full md:w-auto cursor-pointer inline-flex items-center justify-center gap-2 bg-[#22C55E] dark:bg-[#39FF7A] text-white dark:text-[#0A0D0A] px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-wider hover:opacity-90 transition-all">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
                                 </svg>
@@ -223,7 +225,8 @@ try {
                         <button type="submit" class="w-full md:w-auto bg-[#22C55E] dark:bg-[#39FF7A] text-white dark:text-[#0A0D0A] px-10 py-3 rounded-xl font-bold text-xs uppercase tracking-wider hover:opacity-90 transition-all">
                             Submit
                         </button>
-                    </div>
+                                    </div>
+                                </div>
                     <p class="text-[10px] text-gray-400 dark:text-[#9CA39C]/60 text-center md:text-left mt-2">
                         *Upload your resume in pdf, doc, docx, jpg, or png format.
                     </p>

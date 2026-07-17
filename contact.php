@@ -9,7 +9,7 @@ require_once 'includes/header.php';
         <!-- BEGIN: Page Header -->
         <section class="relative w-full overflow-hidden bg-transparent transition-colors duration-300 min-h-screen flex items-center" data-purpose="hero-section">
             <!-- Vector Background Graphics -->
-            <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
+            <div class="absolute inset-0 pointer-events-none overflow-hidden z-0 hidden md:block">
                 <!-- Soft Mesh Gradient -->
                 <div class="absolute inset-0 bg-gradient-to-br from-[#EEF5FF] via-transparent to-[#F8FAFC] dark:from-[#132c1c]/10 dark:via-transparent dark:to-[#0B3D91]/10 opacity-60"></div>
                 <!-- Background Image (Light/Dark Switch) -->
@@ -40,7 +40,7 @@ require_once 'includes/header.php';
         <!-- BEGIN: ContactSection -->
         <section class="max-w-7xl mx-auto px-6 py-20 transition-colors duration-300" data-purpose="contact-section">
             <div class="bg-gray-50 dark:bg-[#0A0D0A] border border-gray-100 dark:border-white/[0.08] rounded-[2.5rem] p-8 md:p-12 transition-all shadow-sm">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div class="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-16">
                     <!-- Info Column -->
                     <div class="space-y-10 lg:pr-8">
                         <div class="text-left space-y-4 mb-8">
@@ -140,7 +140,7 @@ require_once 'includes/header.php';
         <!-- BEGIN: Office Location -->
         <section class="max-w-7xl mx-auto px-6 pb-20 transition-colors duration-300">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="rounded-[2.5rem] overflow-hidden border border-gray-100 dark:border-white/[0.08] shadow-sm relative w-full h-[400px]">
+                <div class="rounded-[2.5rem] overflow-hidden border border-gray-100 dark:border-white/[0.08] shadow-sm relative w-full h-[250px] lg:h-[400px]">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3907.4589255280907!2d78.156543!3d11.662134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf024bf8b19bd%3A0xf63989c02ff3e41b!2sKristen%20Technologies!5e0!3m2!1sen!2sin!4v1716382627492!5m2!1sen!2sin" 
                         class="w-full h-full border-0" 
                         allowfullscreen="" 

@@ -9,7 +9,7 @@ require_once 'includes/header.php';
         <!-- BEGIN: Hero Section -->
         <section class="relative w-full overflow-hidden bg-transparent transition-colors duration-300 min-h-screen flex items-center" data-purpose="hero-section">
             <!-- Vector Background Graphics -->
-            <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
+            <div class="absolute inset-0 pointer-events-none overflow-hidden z-0 hidden md:block">
                 <!-- Soft Mesh Gradient -->
                 <div class="absolute inset-0 bg-gradient-to-br from-[#EEF5FF] via-transparent to-[#F8FAFC] dark:from-[#132c1c]/10 dark:via-transparent dark:to-[#0B3D91]/10 opacity-60"></div>
                 <!-- Background Image (Light/Dark Switch) -->
@@ -249,11 +249,11 @@ require_once 'includes/header.php';
                 <div class="py-4">
                     <h2 class="text-3xl md:text-4xl font-extrabold text-brandNavy dark:text-white mb-12 text-center">Our Journey at <span class="text-[#22C55E] dark:text-[#39FF7A]">a glance</span></h2>
                     
-                    <div class="max-w-4xl mx-auto bg-[#F8FAFC] dark:bg-[#111512] rounded-3xl border border-gray-100 dark:border-white/5 shadow-sm p-6 md:p-10 relative overflow-hidden">
+                    <div class="max-w-4xl mx-auto bg-[#F8FAFC] dark:bg-[#111512] rounded-3xl border border-gray-100 dark:border-white/5 shadow-sm p-6 lg:p-10 relative overflow-hidden">
                         <div class="divide-y divide-gray-200/60 dark:divide-white/5">
                             
                             <!-- 2018 Milestone -->
-                            <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start md:items-stretch py-8 first:pt-0 last:pb-0">
+                            <div class="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start lg:items-stretch py-8 first:pt-0 last:pb-0">
                                 <!-- Left side: Badge & Year -->
                                 <div class="flex items-center gap-4 w-52 flex-shrink-0">
                                     <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 text-white bg-[#22C55E] dark:bg-[#39FF7A] dark:text-[#0A0D0A] shadow-sm">
@@ -268,10 +268,10 @@ require_once 'includes/header.php';
                                 </div>
                                 
                                 <!-- Colored vertical divider line -->
-                                <div class="hidden md:block w-0.5 bg-[#22C55E] dark:bg-[#39FF7A] self-stretch mx-2 rounded-full"></div>
+                                <div class="hidden lg:block w-0.5 bg-[#22C55E] dark:bg-[#39FF7A] self-stretch mx-2 rounded-full"></div>
                                 
                                 <!-- Right side: Title & Description -->
-                                <div class="flex-1 pl-4 md:pl-0 space-y-3 py-1">
+                                <div class="flex-1 pl-4 lg:pl-0 space-y-3 py-1">
                                     <h3 class="text-xl font-bold text-[#0B3D91] dark:text-white leading-tight">The Beginning</h3>
                                     <ul class="space-y-2.5 text-sm text-gray-600 dark:text-gray-400">
                                         <li class="flex items-start gap-3">
@@ -291,7 +291,7 @@ require_once 'includes/header.php';
                             </div>
                             
                             <!-- 2019 Milestone -->
-                            <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start md:items-stretch py-8 first:pt-0 last:pb-0">
+                            <div class="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start lg:items-stretch py-8 first:pt-0 last:pb-0">
                                 <!-- Left side: Badge & Year -->
                                 <div class="flex items-center gap-4 w-52 flex-shrink-0">
                                     <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 text-white bg-[#0B3D91] dark:bg-[#4A90E2] shadow-sm">
@@ -306,10 +306,10 @@ require_once 'includes/header.php';
                                 </div>
                                 
                                 <!-- Colored vertical divider line -->
-                                <div class="hidden md:block w-0.5 bg-[#0B3D91] dark:bg-[#4A90E2] self-stretch mx-2 rounded-full"></div>
+                                <div class="hidden lg:block w-0.5 bg-[#0B3D91] dark:bg-[#4A90E2] self-stretch mx-2 rounded-full"></div>
                                 
                                 <!-- Right side: Title & Description -->
-                                <div class="flex-1 pl-4 md:pl-0 space-y-3 py-1">
+                                <div class="flex-1 pl-4 lg:pl-0 space-y-3 py-1">
                                     <h3 class="text-xl font-bold text-[#0B3D91] dark:text-white leading-tight">Service Expansion</h3>
                                     <ul class="space-y-2.5 text-sm text-gray-600 dark:text-gray-400">
                                         <li class="flex items-start gap-3">
@@ -329,7 +329,7 @@ require_once 'includes/header.php';
                             </div>
                             
                             <!-- 2021 Milestone -->
-                            <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start md:items-stretch py-8 first:pt-0 last:pb-0">
+                            <div class="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start lg:items-stretch py-8 first:pt-0 last:pb-0">
                                 <!-- Left side: Badge & Year -->
                                 <div class="flex items-center gap-4 w-52 flex-shrink-0">
                                     <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 text-white bg-[#ea580c] dark:bg-[#f97316] shadow-sm">
@@ -344,10 +344,10 @@ require_once 'includes/header.php';
                                 </div>
                                 
                                 <!-- Colored vertical divider line -->
-                                <div class="hidden md:block w-0.5 bg-[#ea580c] dark:bg-[#f97316] self-stretch mx-2 rounded-full"></div>
+                                <div class="hidden lg:block w-0.5 bg-[#ea580c] dark:bg-[#f97316] self-stretch mx-2 rounded-full"></div>
                                 
                                 <!-- Right side: Title & Description -->
-                                <div class="flex-1 pl-4 md:pl-0 space-y-3 py-1">
+                                <div class="flex-1 pl-4 lg:pl-0 space-y-3 py-1">
                                     <h3 class="text-xl font-bold text-[#0B3D91] dark:text-white leading-tight">Regional Growth</h3>
                                     <ul class="space-y-2.5 text-sm text-gray-600 dark:text-gray-400">
                                         <li class="flex items-start gap-3">
@@ -367,7 +367,7 @@ require_once 'includes/header.php';
                             </div>
                             
                             <!-- 2023 Milestone -->
-                            <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start md:items-stretch py-8 first:pt-0 last:pb-0">
+                            <div class="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start lg:items-stretch py-8 first:pt-0 last:pb-0">
                                 <!-- Left side: Badge & Year -->
                                 <div class="flex items-center gap-4 w-52 flex-shrink-0">
                                     <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 text-white bg-[#ec4899] dark:bg-[#f43f5e] shadow-sm">
@@ -382,10 +382,10 @@ require_once 'includes/header.php';
                                 </div>
                                 
                                 <!-- Colored vertical divider line -->
-                                <div class="hidden md:block w-0.5 bg-[#ec4899] dark:bg-[#f43f5e] self-stretch mx-2 rounded-full"></div>
+                                <div class="hidden lg:block w-0.5 bg-[#ec4899] dark:bg-[#f43f5e] self-stretch mx-2 rounded-full"></div>
                                 
                                 <!-- Right side: Title & Description -->
-                                <div class="flex-1 pl-4 md:pl-0 space-y-3 py-1">
+                                <div class="flex-1 pl-4 lg:pl-0 space-y-3 py-1">
                                     <h3 class="text-xl font-bold text-[#0B3D91] dark:text-white leading-tight">Major Milestone</h3>
                                     <ul class="space-y-2.5 text-sm text-gray-600 dark:text-gray-400">
                                         <li class="flex items-start gap-3">
@@ -405,7 +405,7 @@ require_once 'includes/header.php';
                             </div>
                             
                             <!-- 2025 Milestone -->
-                            <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start md:items-stretch py-8 first:pt-0 last:pb-0">
+                            <div class="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start lg:items-stretch py-8 first:pt-0 last:pb-0">
                                 <!-- Left side: Badge & Year -->
                                 <div class="flex items-center gap-4 w-52 flex-shrink-0">
                                     <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 text-white bg-[#06b6d4] dark:bg-[#22d3ee] shadow-sm">
@@ -420,10 +420,10 @@ require_once 'includes/header.php';
                                 </div>
                                 
                                 <!-- Colored vertical divider line -->
-                                <div class="hidden md:block w-0.5 bg-[#06b6d4] dark:bg-[#22d3ee] self-stretch mx-2 rounded-full"></div>
+                                <div class="hidden lg:block w-0.5 bg-[#06b6d4] dark:bg-[#22d3ee] self-stretch mx-2 rounded-full"></div>
                                 
                                 <!-- Right side: Title & Description -->
-                                <div class="flex-1 pl-4 md:pl-0 space-y-3 py-1">
+                                <div class="flex-1 pl-4 lg:pl-0 space-y-3 py-1">
                                     <h3 class="text-xl font-bold text-[#0B3D91] dark:text-white leading-tight">Future Goals</h3>
                                     <ul class="space-y-2.5 text-sm text-gray-600 dark:text-gray-400">
                                         <li class="flex items-start gap-3">
