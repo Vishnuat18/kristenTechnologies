@@ -1,13 +1,19 @@
 <?php
 // api/resend.php
 
+if (file_exists(dirname(__DIR__) . '/config.php')) {
+    require_once dirname(__DIR__) . '/config.php';
+}
+
 function send_resend_email($subject, $htmlBody, $attachments = []) {
-    $apiKey = 're_EW4LtVCq_3NBVyot9jEYuME37Fz4PNmjo';
+    $apiKey = defined('RESEND_API_KEY') ? RESEND_API_KEY : '';
+    $from = defined('RESEND_FROM') ? RESEND_FROM : 'onboarding@resend.dev';
+    $to = defined('RESEND_TO') ? RESEND_TO : 'vishnurajan24766@gmail.com';
     $url = 'https://api.resend.com/emails';
     
     $payload = [
-        'from' => 'onboarding@resend.dev',
-        'to' => 'vishnurajan24766@gmail.com',
+        'from' => $from,
+        'to' => $to,
         'subject' => $subject,
         'html' => $htmlBody,
     ];
