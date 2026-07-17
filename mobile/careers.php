@@ -17,7 +17,7 @@ try {
     <main class="pb-16">
         
         <!-- BEGIN: Careers Hero -->
-        <section class="relative w-full overflow-hidden bg-transparent transition-colors duration-300 min-h-screen flex items-center" data-purpose="hero-section">
+        <section class="relative w-full overflow-hidden bg-transparent transition-colors duration-300 min-h-fit flex flex-col items-center" data-purpose="hero-section">
             <!-- Vector Background Graphics -->
             <div class="absolute inset-0 pointer-events-none overflow-hidden z-0 hidden md:block">
                 <!-- Soft Mesh Gradient -->
@@ -38,6 +38,8 @@ try {
                 <p class="text-gray-600 dark:text-[#9CA39C] text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
                     Join our team and help shape the future of local IT services. We are looking for passionate and talented individuals to join us.
                 </p>
+                <!-- Hero Image (No box/shadow as requested) -->
+                <img src="../mobile_hero/career.png" alt="Careers at Kristen Technologies" class="mt-10 w-full max-w-md mx-auto object-cover">
             </div>
         </section>
         
@@ -194,7 +196,7 @@ try {
                     IF YOU HAVE ANY<br>DOUBTS CONTACT US
                 </h2>
                 
-                <form action="save_contact.php" method="POST" enctype="multipart/form-data" class="space-y-8">
+                <form action="../save_careers.php" method="POST" enctype="multipart/form-data" class="space-y-8">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div class="relative">
                             <input type="text" id="name" name="name" required class="w-full bg-transparent border-b border-gray-200 dark:border-white/[0.12] py-3 text-sm focus:outline-none focus:border-[#22C55E] dark:focus:border-[#39FF7A] text-[#0A2640] dark:text-white transition-colors placeholder:text-gray-400 dark:placeholder:text-[#9CA39C]/40" placeholder="Name">

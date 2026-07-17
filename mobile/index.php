@@ -7,7 +7,7 @@ require_once 'includes/header.php';
     <main>
         <!-- BEGIN: HeroSection -->
         <section
-            class="relative w-full overflow-hidden bg-transparent transition-colors duration-300 min-h-screen flex items-center"
+            class="relative w-full overflow-hidden bg-transparent transition-colors duration-300 min-h-fit flex flex-col items-center"
             data-purpose="hero-section">
 
             <!-- Vector Background Graphics -->
@@ -64,6 +64,9 @@ require_once 'includes/header.php';
                             Careers
                         </a>
                     </div>
+                    
+                    <!-- Hero Image -->
+                    <img src="../mobile_hero/home.png" alt="Kristen Technologies Hero" class="mt-12 w-full max-w-md mx-auto object-cover">
                 </div>
 
             </div>
@@ -87,55 +90,60 @@ require_once 'includes/header.php';
                                 Design your dream machine tailored exactly to your needs. Whether for high-end gaming,
                                 professional editing, or everyday tasks, we've got you covered.</p>
                         </div>
-                        <div
-                            class="mt-8 rounded-2xl overflow-hidden bg-white dark:bg-[#0A0D0A] p-4 border-2 border-dotted border-gray-300 dark:border-white/15 hover:border-brandGreen dark:hover:border-[#39FF7A] transition-colors duration-300 ease-in-out group flex justify-center items-center">
-                            <!-- Video Placeholder -->
-                            <video src="../images/generate_the_looping_animation.mp4"
-                                class="w-full h-auto object-contain max-h-[300px] group-hover:scale-105 transition-transform duration-500 ease-out"
-                                muted loop playsinline onmouseover="this.play()" onmouseout="this.pause()"></video>
-                        </div>
-                    </div>
-
-                    <!-- Right Column: Form -->
-                    <div
-                        class="bg-white dark:bg-[#0A0D0A] p-8 rounded-2xl shadow-lg dark:shadow-none border border-gray-100 dark:border-white/[0.08] transition-colors premium-card">
-                        <form class="space-y-6">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div class="space-y-2">
-                                    <label class="text-sm font-medium text-gray-700 dark:text-[#9CA39C]">Name</label>
-                                    <input type="text" placeholder="Enter your full name"
-                                        class="w-full bg-gray-50 dark:bg-black/30 border border-gray-200 dark:border-white/10 rounded-xl px-4 py-3 text-gray-800 dark:text-white focus:outline-none focus:border-brandGreen dark:focus:border-[#39FF7A] transition-colors" />
-                                </div>
-                                <div class="space-y-2">
-                                    <label class="text-sm font-medium text-gray-700 dark:text-[#9CA39C]">Mobile</label>
-                                    <input type="tel" placeholder="Enter your phone number"
-                                        class="w-full bg-gray-50 dark:bg-black/30 border border-gray-200 dark:border-white/10 rounded-xl px-4 py-3 text-gray-800 dark:text-white focus:outline-none focus:border-brandGreen dark:focus:border-[#39FF7A] transition-colors" />
-                                </div>
-                            </div>
-
-                            <div class="space-y-2">
-                                <label class="text-sm font-medium text-gray-700 dark:text-[#9CA39C]">Email</label>
-                                <input type="email" placeholder="Enter your email address"
-                                    class="w-full bg-gray-50 dark:bg-black/30 border border-gray-200 dark:border-white/10 rounded-xl px-4 py-3 text-gray-800 dark:text-white focus:outline-none focus:border-brandGreen dark:focus:border-[#39FF7A] transition-colors" />
-                            </div>
-
-                            <div class="space-y-2">
-                                <label class="text-sm font-medium text-gray-700 dark:text-[#9CA39C]">Description</label>
-                                <textarea rows="4"
-                                    placeholder="Tell us about your requirements (budget, usage, specific parts...)"
-                                    class="w-full bg-gray-50 dark:bg-black/30 border border-gray-200 dark:border-white/10 rounded-xl px-4 py-3 text-gray-800 dark:text-white focus:outline-none focus:border-brandGreen dark:focus:border-[#39FF7A] transition-colors resize-none"></textarea>
-                            </div>
-
-                            <button type="submit"
-                                class="w-full bg-brandGreen dark:bg-white hover:opacity-90 text-white dark:text-[#0A0D0A] font-bold py-4 rounded-full shadow-md dark:shadow-lg  transition-all">
-                                Get Quote
-                            </button>
-                        </form>
+                        <video 
+                            x-data 
+                            x-intersect="$el.play()" 
+                            x-intersect:leave="$el.pause()" 
+                            src="../videos/generate_the_looping_animation.mp4"
+                            class="w-full h-auto object-contain max-h-[320px] rounded-3xl mt-8"
+                            muted loop playsinline></video>
+                        
+                        <button onclick="document.getElementById('quoteModal').classList.remove('hidden')" class="w-full bg-[#0B3D91] text-white dark:bg-white dark:text-[#0A0D0A] font-bold py-4 rounded-full shadow-md mt-6 transition-all">
+                            Get Quote
+                        </button>
                     </div>
                 </div>
             </div>
         </section>
         <!-- END: Custom PC Card -->
+
+        <!-- Quote Popup Modal -->
+        <div id="quoteModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
+            <!-- Backdrop -->
+            <div class="absolute inset-0 bg-black/70 backdrop-blur-sm transition-opacity" onclick="document.getElementById('quoteModal').classList.add('hidden')"></div>
+            
+            <!-- Modal Content -->
+            <div class="relative w-full max-w-sm bg-[#0A0D0A] rounded-2xl shadow-2xl z-10 max-h-[90vh] overflow-y-auto p-6 md:p-8">
+                <form action="../save_quote.php" method="POST" class="space-y-6">
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium text-[#9CA39C]">Name</label>
+                        <input type="text" name="fullname" required placeholder="Enter your full name"
+                            class="w-full bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#39FF7A] transition-colors" />
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium text-[#9CA39C]">Mobile</label>
+                        <input type="tel" name="phone" required placeholder="Enter your phone number"
+                            class="w-full bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#39FF7A] transition-colors" />
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium text-[#9CA39C]">Email</label>
+                        <input type="email" name="email" required placeholder="Enter your email address"
+                            class="w-full bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#39FF7A] transition-colors" />
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium text-[#9CA39C]">Description</label>
+                        <textarea rows="4" name="description"
+                            placeholder="Tell us about your requirements (budget, usage, specific parts...)"
+                            class="w-full bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#39FF7A] transition-colors resize-none"></textarea>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full bg-white hover:opacity-90 text-[#0A0D0A] font-bold py-4 rounded-full shadow-lg transition-all mt-4">
+                        Get Quote
+                    </button>
+                </form>
+            </div>
+        </div>
         <!-- BEGIN: WhyChooseUs -->
         <section class="relative overflow-hidden py-16 md:py-20 bg-white dark:bg-[#0A0D0A] transition-colors duration-300" data-purpose="why-choose-us">
             <!-- Subtle decorative glow -->
@@ -855,24 +863,24 @@ require_once 'includes/header.php';
                         </div>
                     </div>
                     <!-- Form Column -->
-                    <div class="space-y-4">
+                    <form action="../save_contact.php" method="POST" class="space-y-4">
                         <div class="grid grid-cols-2 gap-4">
                             <input
                                 class="bg-slate-50 dark:bg-[#0A0D0A] border border-gray-200 dark:border-white/10 rounded-xl p-4 text-sm text-brandNavy dark:text-white focus:border-brandNavy dark:focus:border-[#39FF7A] focus:ring-1 focus:ring-brandNavy dark:focus:ring-[#39FF7A] outline-none transition-all shadow-sm"
-                                placeholder="Full Name" type="text" />
+                                placeholder="Full Name" name="fullname" required type="text" />
                             <input
                                 class="bg-slate-50 dark:bg-[#0A0D0A] border border-gray-200 dark:border-white/10 rounded-xl p-4 text-sm text-brandNavy dark:text-white focus:border-brandNavy dark:focus:border-[#39FF7A] focus:ring-1 focus:ring-brandNavy dark:focus:ring-[#39FF7A] outline-none transition-all shadow-sm"
-                                placeholder="Email Address" type="email" />
+                                placeholder="Email Address" name="email" required type="email" />
                         </div>
                         <div class="grid grid-cols-2 gap-4">
                             <input
                                 class="bg-slate-50 dark:bg-[#0A0D0A] border border-gray-200 dark:border-white/10 rounded-xl p-4 text-sm text-brandNavy dark:text-white focus:border-brandNavy dark:focus:border-[#39FF7A] focus:ring-1 focus:ring-brandNavy dark:focus:ring-[#39FF7A] outline-none transition-all shadow-sm"
-                                placeholder="Phone Number" type="tel" />
+                                placeholder="Phone Number" name="contactno" required type="tel" />
                             <input
                                 class="bg-slate-50 dark:bg-[#0A0D0A] border border-gray-200 dark:border-white/10 rounded-xl p-4 text-sm text-brandNavy dark:text-white focus:border-brandNavy dark:focus:border-[#39FF7A] focus:ring-1 focus:ring-brandNavy dark:focus:ring-[#39FF7A] outline-none transition-all shadow-sm"
-                                placeholder="Subject" type="text" />
+                                placeholder="Subject" name="subject" required type="text" />
                         </div>
-                        <textarea
+                        <textarea name="message" required
                             class="w-full bg-slate-50 dark:bg-[#0A0D0A] border border-gray-200 dark:border-white/10 rounded-xl p-4 text-sm text-brandNavy dark:text-white focus:border-brandNavy dark:focus:border-[#39FF7A] focus:ring-1 focus:ring-brandNavy dark:focus:ring-[#39FF7A] outline-none transition-all shadow-sm resize-none"
                             placeholder="Message" rows="5"></textarea>
                         <button
@@ -884,7 +892,7 @@ require_once 'includes/header.php';
                                 </path>
                             </svg>
                         </button>
-                    </div>
+                    </form>
                 </div>
             </div>
         </section>

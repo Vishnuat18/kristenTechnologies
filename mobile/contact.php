@@ -7,7 +7,7 @@ require_once 'includes/header.php';
 
     <main class="pb-16">
         <!-- BEGIN: Page Header -->
-        <section class="relative w-full overflow-hidden bg-transparent transition-colors duration-300 min-h-screen flex items-center" data-purpose="hero-section">
+        <section class="relative w-full overflow-hidden bg-transparent transition-colors duration-300 min-h-fit flex flex-col items-center" data-purpose="hero-section">
             <!-- Vector Background Graphics -->
             <div class="absolute inset-0 pointer-events-none overflow-hidden z-0 hidden md:block">
                 <!-- Soft Mesh Gradient -->
@@ -31,6 +31,9 @@ require_once 'includes/header.php';
                         <p class="text-gray-600 dark:text-[#9CA39C] max-w-2xl mx-auto text-lg leading-relaxed transition-colors font-medium">
                             We'd love to hear from you! Whether you have a question about our services, need technical support, or want a custom quote - our team is ready to help.
                         </p>
+                        
+                        <!-- Hero Image -->
+                        <img src="../mobile_hero/contact.png" alt="Contact Kristen Technologies" class="mt-12 w-full max-w-md mx-auto object-cover">
                     </div>
                 </div>
             </div>
@@ -90,7 +93,7 @@ require_once 'includes/header.php';
 
                     <!-- Form Column -->
                     <div>
-                        <form action="/save_contact" method="POST" class="space-y-6">
+                        <form action="../save_contact.php" method="POST" class="space-y-6">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label class="sr-only" for="fullname">Full Name</label>

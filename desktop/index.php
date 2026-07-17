@@ -87,41 +87,41 @@ require_once 'includes/header.php';
                                 Design your dream machine tailored exactly to your needs. Whether for high-end gaming,
                                 professional editing, or everyday tasks, we've got you covered.</p>
                         </div>
-                        <div
-                            class="mt-8 rounded-2xl overflow-hidden bg-white dark:bg-[#0A0D0A] p-4 border-2 border-dotted border-gray-300 dark:border-white/15 hover:border-brandGreen dark:hover:border-[#39FF7A] transition-colors duration-300 ease-in-out group flex justify-center items-center">
-                            <!-- Video Placeholder -->
-                            <video src="../images/generate_the_looping_animation.mp4"
-                                class="w-full h-auto object-contain max-h-[300px] group-hover:scale-105 transition-transform duration-500 ease-out"
-                                muted loop playsinline onmouseover="this.play()" onmouseout="this.pause()"></video>
-                        </div>
+                        <video 
+                            x-data 
+                            x-intersect="$el.play()" 
+                            x-intersect:leave="$el.pause()" 
+                            src="../videos/generate_the_looping_animation.mp4"
+                            class="w-full h-auto object-contain max-h-[320px] rounded-3xl mt-8"
+                            muted loop playsinline></video>
                     </div>
 
                     <!-- Right Column: Form -->
                     <div
                         class="bg-white dark:bg-[#0A0D0A] p-8 rounded-2xl shadow-lg dark:shadow-none border border-gray-100 dark:border-white/[0.08] transition-colors premium-card">
-                        <form class="space-y-6">
+                        <form action="../save_quote.php" method="POST" class="space-y-6">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div class="space-y-2">
                                     <label class="text-sm font-medium text-gray-700 dark:text-[#9CA39C]">Name</label>
-                                    <input type="text" placeholder="Enter your full name"
+                                    <input type="text" name="fullname" required placeholder="Enter your full name"
                                         class="w-full bg-gray-50 dark:bg-black/30 border border-gray-200 dark:border-white/10 rounded-xl px-4 py-3 text-gray-800 dark:text-white focus:outline-none focus:border-brandGreen dark:focus:border-[#39FF7A] transition-colors" />
                                 </div>
                                 <div class="space-y-2">
                                     <label class="text-sm font-medium text-gray-700 dark:text-[#9CA39C]">Mobile</label>
-                                    <input type="tel" placeholder="Enter your phone number"
+                                    <input type="tel" name="phone" required placeholder="Enter your phone number"
                                         class="w-full bg-gray-50 dark:bg-black/30 border border-gray-200 dark:border-white/10 rounded-xl px-4 py-3 text-gray-800 dark:text-white focus:outline-none focus:border-brandGreen dark:focus:border-[#39FF7A] transition-colors" />
                                 </div>
                             </div>
 
                             <div class="space-y-2">
                                 <label class="text-sm font-medium text-gray-700 dark:text-[#9CA39C]">Email</label>
-                                <input type="email" placeholder="Enter your email address"
+                                <input type="email" name="email" required placeholder="Enter your email address"
                                     class="w-full bg-gray-50 dark:bg-black/30 border border-gray-200 dark:border-white/10 rounded-xl px-4 py-3 text-gray-800 dark:text-white focus:outline-none focus:border-brandGreen dark:focus:border-[#39FF7A] transition-colors" />
                             </div>
 
                             <div class="space-y-2">
                                 <label class="text-sm font-medium text-gray-700 dark:text-[#9CA39C]">Description</label>
-                                <textarea rows="4"
+                                <textarea rows="4" name="description"
                                     placeholder="Tell us about your requirements (budget, usage, specific parts...)"
                                     class="w-full bg-gray-50 dark:bg-black/30 border border-gray-200 dark:border-white/10 rounded-xl px-4 py-3 text-gray-800 dark:text-white focus:outline-none focus:border-brandGreen dark:focus:border-[#39FF7A] transition-colors resize-none"></textarea>
                             </div>
@@ -229,40 +229,36 @@ require_once 'includes/header.php';
                         </div>
 
                         <!-- BEGIN: Stats Cards inside Why Choose Us -->
-                        <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
+                        <div class="flex flex-wrap gap-8 pt-6">
                             <!-- Stat Card 1 -->
-                            <div class="bg-slate-50 dark:bg-[#111512] rounded-2xl p-5 flex items-center gap-4 border border-gray-100 dark:border-white/[0.03] transition-colors">
-                                <div class="w-14 h-14 rounded-full flex-shrink-0 flex items-center justify-center bg-brandGreen/10 dark:bg-[#152e22]/90 border border-brandGreen/20 dark:border-[#2d5c3f] relative overflow-hidden">
-                                    <!-- Soft radial green glow in the circle -->
-                                    <div class="absolute inset-0 bg-brandGreen/5 dark:bg-[#39FF7A]/10"></div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-16 h-16 rounded-full flex-shrink-0 flex items-center justify-center border border-gray-200 dark:border-[#2d5c3f] relative overflow-hidden bg-white dark:bg-[#111512]">
                                     <!-- Laptop Icon -->
-                                    <svg class="w-7 h-7 text-brandGreen dark:text-[#39FF7A] relative z-10" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                                    <svg class="w-8 h-8 text-[#22C55E] dark:text-[#39FF7A] relative z-10" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                                         <rect width="18" height="11" x="3" y="4" rx="2"/>
                                         <path d="M2 19h20M2 15h20M7 19v-4M17 19v-4"/>
                                     </svg>
                                 </div>
-                                <div class="space-y-0.5">
-                                    <p class="text-xl md:text-2xl font-bold text-brandNavy dark:text-white tracking-tight font-sans">1,800+</p>
-                                    <p class="text-xs text-slate-500 dark:text-[#9CA39C] font-semibold tracking-wide uppercase">Computers Repaired</p>
+                                <div class="flex flex-col">
+                                    <p class="text-3xl font-bold text-[#0B3D91] dark:text-white tracking-tight font-sans">1,800+</p>
+                                    <p class="text-xs text-gray-500 dark:text-[#9CA39C] font-bold tracking-wider uppercase leading-tight mt-1 max-w-[100px]">Computers<br>Repaired</p>
                                 </div>
                             </div>
 
                             <!-- Stat Card 2 -->
-                            <div class="bg-slate-50 dark:bg-[#111512] rounded-2xl p-5 flex items-center gap-4 border border-gray-100 dark:border-white/[0.03] transition-colors">
-                                <div class="w-14 h-14 rounded-full flex-shrink-0 flex items-center justify-center bg-brandGreen/10 dark:bg-[#152e22]/90 border border-brandGreen/20 dark:border-[#2d5c3f] relative overflow-hidden">
-                                    <!-- Soft radial green glow in the circle -->
-                                    <div class="absolute inset-0 bg-brandGreen/5 dark:bg-[#39FF7A]/10"></div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-16 h-16 rounded-full flex-shrink-0 flex items-center justify-center border border-gray-200 dark:border-[#2d5c3f] relative overflow-hidden bg-white dark:bg-[#111512]">
                                     <!-- Users Icon -->
-                                    <svg class="w-7 h-7 text-brandGreen dark:text-[#39FF7A] relative z-10" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                                    <svg class="w-8 h-8 text-[#22C55E] dark:text-[#39FF7A] relative z-10" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                                         <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
                                         <circle cx="9" cy="7" r="4" />
                                         <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
                                         <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                                     </svg>
                                 </div>
-                                <div class="space-y-0.5">
-                                    <p class="text-xl md:text-2xl font-bold text-brandNavy dark:text-white tracking-tight font-sans">300+</p>
-                                    <p class="text-xs text-slate-500 dark:text-[#9CA39C] font-semibold tracking-wide uppercase">Happy Clients</p>
+                                <div class="flex flex-col">
+                                    <p class="text-3xl font-bold text-[#0B3D91] dark:text-white tracking-tight font-sans">300+</p>
+                                    <p class="text-xs text-gray-500 dark:text-[#9CA39C] font-bold tracking-wider uppercase leading-tight mt-1 max-w-[100px]">Happy<br>Clients</p>
                                 </div>
                             </div>
                         </div>
@@ -855,24 +851,24 @@ require_once 'includes/header.php';
                         </div>
                     </div>
                     <!-- Form Column -->
-                    <div class="space-y-4">
+                    <form action="../save_contact.php" method="POST" class="space-y-4">
                         <div class="grid grid-cols-2 gap-4">
                             <input
                                 class="bg-slate-50 dark:bg-[#0A0D0A] border border-gray-200 dark:border-white/10 rounded-xl p-4 text-sm text-brandNavy dark:text-white focus:border-brandNavy dark:focus:border-[#39FF7A] focus:ring-1 focus:ring-brandNavy dark:focus:ring-[#39FF7A] outline-none transition-all shadow-sm"
-                                placeholder="Full Name" type="text" />
+                                placeholder="Full Name" name="fullname" required type="text" />
                             <input
                                 class="bg-slate-50 dark:bg-[#0A0D0A] border border-gray-200 dark:border-white/10 rounded-xl p-4 text-sm text-brandNavy dark:text-white focus:border-brandNavy dark:focus:border-[#39FF7A] focus:ring-1 focus:ring-brandNavy dark:focus:ring-[#39FF7A] outline-none transition-all shadow-sm"
-                                placeholder="Email Address" type="email" />
+                                placeholder="Email Address" name="email" required type="email" />
                         </div>
                         <div class="grid grid-cols-2 gap-4">
                             <input
                                 class="bg-slate-50 dark:bg-[#0A0D0A] border border-gray-200 dark:border-white/10 rounded-xl p-4 text-sm text-brandNavy dark:text-white focus:border-brandNavy dark:focus:border-[#39FF7A] focus:ring-1 focus:ring-brandNavy dark:focus:ring-[#39FF7A] outline-none transition-all shadow-sm"
-                                placeholder="Phone Number" type="tel" />
+                                placeholder="Phone Number" name="contactno" required type="tel" />
                             <input
                                 class="bg-slate-50 dark:bg-[#0A0D0A] border border-gray-200 dark:border-white/10 rounded-xl p-4 text-sm text-brandNavy dark:text-white focus:border-brandNavy dark:focus:border-[#39FF7A] focus:ring-1 focus:ring-brandNavy dark:focus:ring-[#39FF7A] outline-none transition-all shadow-sm"
-                                placeholder="Subject" type="text" />
+                                placeholder="Subject" name="subject" required type="text" />
                         </div>
-                        <textarea
+                        <textarea name="message" required
                             class="w-full bg-slate-50 dark:bg-[#0A0D0A] border border-gray-200 dark:border-white/10 rounded-xl p-4 text-sm text-brandNavy dark:text-white focus:border-brandNavy dark:focus:border-[#39FF7A] focus:ring-1 focus:ring-brandNavy dark:focus:ring-[#39FF7A] outline-none transition-all shadow-sm resize-none"
                             placeholder="Message" rows="5"></textarea>
                         <button
@@ -884,7 +880,7 @@ require_once 'includes/header.php';
                                 </path>
                             </svg>
                         </button>
-                    </div>
+                    </form>
                 </div>
             </div>
         </section>

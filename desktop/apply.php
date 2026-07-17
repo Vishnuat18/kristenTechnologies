@@ -20,7 +20,7 @@ require_once 'includes/header.php';
             </h1>
             <p class="text-gray-600 dark:text-[#9CA39C] mb-8 text-sm md:text-base">Fill out the form below to submit your application to our hiring team.</p>
             
-            <form action="save_application.php" method="POST" enctype="multipart/form-data" class="space-y-8">
+            <form action="../save_application.php" method="POST" enctype="multipart/form-data" class="space-y-8">
                 <input type="hidden" name="job_title" value="<?= $job_title ?>">
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">

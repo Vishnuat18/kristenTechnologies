@@ -7,7 +7,7 @@ require_once 'includes/header.php';
 
     <main class="pb-16">
         <!-- BEGIN: Services Hero -->
-        <section class="relative w-full overflow-hidden bg-transparent transition-colors duration-300 min-h-screen flex items-center" data-purpose="hero-section">
+        <section class="relative w-full overflow-hidden bg-transparent transition-colors duration-300 min-h-fit flex flex-col items-center" data-purpose="hero-section">
             <!-- Vector Background Graphics -->
             <div class="absolute inset-0 pointer-events-none overflow-hidden z-0 hidden md:block">
                 <!-- Soft Mesh Gradient -->
@@ -28,6 +28,8 @@ require_once 'includes/header.php';
                 <p class="text-gray-600 dark:text-[#9CA39C] text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
                     Kristen Byte Solutions is the best Computers Sales and Service provider in Salem India. We make a personal visit to your office, small business or home for Onsite Computer Setup, Networking, Computer repair, Computer upgrade and Computer Consulting. We have the client based in Salem, Erode, Namakkal and surrounding Areas.
                 </p>
+                <!-- Hero Image -->
+                <img src="../mobile_hero/services.png" alt="Services at Kristen Technologies" class="mt-12 w-full max-w-md mx-auto object-cover">
             </div>
         </section>
         

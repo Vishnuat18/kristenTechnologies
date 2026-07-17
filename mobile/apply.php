@@ -5,7 +5,7 @@ $page_description = "Apply for the " . $job_title . " position at Kristen Techno
 require_once 'includes/header.php';
 ?>
 
-<main class="pb-10 md:pb-16 min-h-screen pt-16 md:pt-24 md:pt-32">
+<main class="pb-10 md:pb-16 min-h-fit pt-24">
     <div class="max-w-3xl mx-auto px-4 md:px-6">
         <div class="mb-8">
             <a href="careers.php" class="text-sm text-gray-500 dark:text-gray-400 hover:text-[#0B3D91] dark:hover:text-[#39FF7A] transition-colors flex items-center gap-2">
@@ -20,7 +20,7 @@ require_once 'includes/header.php';
             </h1>
             <p class="text-gray-600 dark:text-[#9CA39C] mb-8 text-sm md:text-base">Fill out the form below to submit your application to our hiring team.</p>
             
-            <form action="save_application.php" method="POST" enctype="multipart/form-data" class="space-y-8">
+            <form action="../save_application.php" method="POST" enctype="multipart/form-data" class="space-y-8">
                 <input type="hidden" name="job_title" value="<?= $job_title ?>">
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">

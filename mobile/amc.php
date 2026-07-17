@@ -7,7 +7,7 @@ require_once 'includes/header.php';
 
     <main class="pb-16">
         <!-- BEGIN: AMC Hero -->
-        <section class="relative w-full overflow-hidden bg-transparent transition-colors duration-300 min-h-screen flex items-center text-center" data-purpose="hero-section">
+        <section class="relative w-full overflow-hidden bg-transparent transition-colors duration-300 min-h-fit flex flex-col items-center text-center" data-purpose="hero-section">
             <!-- Vector Background Graphics -->
             <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
                 <!-- Soft Mesh Gradient -->
@@ -42,6 +42,9 @@ require_once 'includes/header.php';
                         Back to Home
                     </a>
                 </div>
+                
+                <!-- Hero Image -->
+                <img src="../mobile_hero/career.png" alt="AMC Plans" class="mt-12 w-full max-w-md mx-auto object-cover">
             </div>
         </section>
         <!-- END: AMC Hero -->

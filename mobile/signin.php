@@ -6,7 +6,7 @@ require_once 'includes/header.php';
 ?>
 
 
-    <main class="pt-32 pb-24 relative overflow-hidden flex items-center justify-center min-h-[85vh]">
+    <main class="pt-32 pb-24 relative overflow-hidden flex items-center justify-center min-h-fit">
         
         <!-- Abstract Background Shapes -->
         <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 opacity-30 pointer-events-none">

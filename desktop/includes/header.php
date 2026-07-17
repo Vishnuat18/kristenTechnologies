@@ -24,8 +24,8 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
-    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" type="image/x-icon" href="../icons/favicon.ico" />
+    <link rel="manifest" href="../manifest.json" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- Tailwind CSS v3 with Plugins -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -247,13 +247,71 @@
                     .catch(err => console.log('ServiceWorker registration failed: ', err));
             });
         }
+        
+        // Desktop to Mobile Transition
+        function checkViewport() {
+            if (window.innerWidth <= 768) {
+                if (window.location.pathname.includes('/desktop/')) {
+                    window.location.href = window.location.href.replace('/desktop/', '/mobile/');
+                }
+            }
+        }
+        window.addEventListener('resize', checkViewport);
+        checkViewport();
+    </script>
+    <style>
+        #preloader {
+            display: none;
+        }
+        .preloader-active #preloader {
+            display: flex !important;
+        }
+        .preloader-active {
+            overflow: hidden !important;
+        }
+    </style>
+    <script>
+        const isHomePage = window.location.pathname.endsWith('index.php') || 
+                           window.location.pathname.endsWith('/') || 
+                           window.location.pathname.endsWith('/desktop/') || 
+                           window.location.pathname.endsWith('/mobile/');
+        const showPreloader = isHomePage && !sessionStorage.getItem('preloaderPlayed');
+        if (showPreloader) {
+            document.documentElement.classList.add('preloader-active');
+        }
     </script>
 </head>
 
 <body class="overflow-x-hidden bg-white text-slate-800 dark:bg-surface dark:text-white font-sans antialiased">
+    <!-- Preloader Screen -->
+    <div id="preloader" class="fixed inset-0 z-[100000] flex items-center justify-center bg-white transition-opacity duration-700 ease-in-out">
+        <video id="preloader-video" class="max-w-[1080px] max-h-[720px] md:max-w-[360px] md:max-h-[360px] w-full h-auto object-contain" src="../videos/preloader.mp4" autoplay muted playsinline></video>
+    </div>
+    <script>
+        if (typeof showPreloader !== 'undefined' && showPreloader) {
+            const preloader = document.getElementById('preloader');
+            const video = document.getElementById('preloader-video');
+            
+            const fadeOutPreloader = () => {
+                preloader.classList.add('opacity-0');
+                document.documentElement.classList.remove('preloader-active');
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 700);
+                sessionStorage.setItem('preloaderPlayed', 'true');
+            };
+
+            video.onended = fadeOutPreloader;
+            
+            // Safety net: 6 seconds max
+            setTimeout(fadeOutPreloader, 6000);
+        }
+    </script>
+
     <!-- Theme Transition Overlay -->
     <div x-show="isTransitioning" x-transition.opacity.duration.100ms
         class="fixed inset-0 bg-[#0A0D0A] z-[9999] pointer-events-none" style="display: none;"></div>
+
     <!-- BEGIN: MainHeader -->
     <header x-data="{ drawerOpen: false }"
         class="fixed top-0 w-full z-50 bg-white/90 dark:bg-[#0A0D0A]/40 backdrop-blur-md border-b border-gray-100 dark:border-border transition-colors duration-300"
@@ -279,8 +337,6 @@
                     href="careers.php">Careers</a>
                 <a class="nav-link hover:text-brandGreen dark:hover:text-[#39FF7A] transition-colors"
                     href="contact.php">Contact</a>
-                <a class="nav-link hover:text-brandGreen dark:hover:text-[#39FF7A] transition-colors"
-                    href="https://mail.kristenbytes.com">Employee Login</a>
             </nav>
 
             <!-- Theme Toggle & CTA (Right) -->
@@ -307,10 +363,14 @@
                         </svg>
                     </span>
                 </button>
-                <a href="contact.php"
-                    class="hidden md:flex bg-[#0B3D91] dark:bg-white text-white dark:text-[#0A0D0A] px-6 py-2.5 rounded-full font-bold items-center gap-2 hover:opacity-90 transition-all text-sm shadow-sm">
-                    Get Started <span class="text-xs font-bold">&#8599;</span>
-                </a>
+                <div class="hidden md:flex items-center gap-3 ml-2">
+                    <a href="#" class="text-[#0B3D91] dark:text-white font-bold hover:opacity-80 transition-opacity text-sm px-4 py-2">
+                        Login
+                    </a>
+                    <a href="#" class="bg-[#0B3D91] dark:bg-[#39FF7A] text-white dark:text-[#0A0D0A] px-5 py-2.5 rounded-full font-bold items-center gap-2 hover:opacity-90 transition-all text-sm shadow-sm">
+                        Sign up <span class="text-xs font-bold">&#8599;</span>
+                    </a>
+                </div>
             
                 <!-- Mobile Menu Button -->
                 <button @click="drawerOpen = true" class="md:hidden p-2 text-gray-800 dark:text-white focus:outline-none">

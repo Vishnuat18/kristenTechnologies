@@ -7,7 +7,7 @@ require_once 'includes/header.php';
     
     <main class="pb-16">
         <!-- BEGIN: Hero Section -->
-        <section class="relative w-full overflow-hidden bg-transparent transition-colors duration-300 min-h-screen flex items-center" data-purpose="hero-section">
+        <section class="relative w-full overflow-hidden bg-transparent transition-colors duration-300 min-h-fit flex flex-col items-center" data-purpose="hero-section">
             <!-- Vector Background Graphics -->
             <div class="absolute inset-0 pointer-events-none overflow-hidden z-0 hidden md:block">
                 <!-- Soft Mesh Gradient -->
@@ -30,41 +30,44 @@ require_once 'includes/header.php';
                 </p>
                 
                 <!-- Stats Box -->
-                <div class="max-w-4xl mx-auto bg-white/70 dark:bg-[#111512]/60 backdrop-blur-md rounded-3xl border border-gray-100 dark:border-white/5 shadow-lg p-6 md:p-8 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 divide-y md:divide-y-0 md:divide-x divide-gray-100 dark:divide-white/5">
-                    <div class="flex items-center gap-4 justify-center md:justify-start p-4 md:p-2">
-                        <div class="p-3 bg-[#e8f5e9] dark:bg-[#39FF7A]/10 rounded-2xl flex-shrink-0 text-brandGreen dark:text-[#39FF7A]">
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <div class="w-full bg-white/70 dark:bg-[#111512]/60 backdrop-blur-md rounded-2xl border border-gray-100 dark:border-white/5 shadow-lg p-3 md:p-8 flex flex-row justify-between divide-x divide-gray-100 dark:divide-white/5">
+                    <div class="flex flex-col items-center gap-1 justify-center px-2 flex-1 text-center">
+                        <div class="p-2 bg-[#e8f5e9] dark:bg-[#39FF7A]/10 rounded-xl flex-shrink-0 text-brandGreen dark:text-[#39FF7A]">
+                            <svg class="w-5 h-5 md:w-7 md:h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 00-2 2z"></path>
                             </svg>
                         </div>
-                        <div class="text-left">
-                            <div class="text-3xl font-extrabold text-brandNavy dark:text-[#39FF7A]">10+</div>
-                            <div class="text-sm font-semibold text-gray-500 dark:text-gray-400">Years of Experience</div>
+                        <div>
+                            <div class="text-lg md:text-3xl font-extrabold text-brandNavy dark:text-[#39FF7A]">10+</div>
+                            <div class="text-[10px] md:text-sm font-semibold text-gray-500 dark:text-gray-400 leading-tight">Years<br class="md:hidden"> Exp.</div>
                         </div>
                     </div>
-                    <div class="flex items-center gap-4 justify-center md:justify-start p-4 md:p-2 md:pl-8">
-                        <div class="p-3 bg-[#e8f5e9] dark:bg-[#39FF7A]/10 rounded-2xl flex-shrink-0 text-brandGreen dark:text-[#39FF7A]">
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <div class="flex flex-col items-center gap-1 justify-center px-2 flex-1 text-center">
+                        <div class="p-2 bg-[#e8f5e9] dark:bg-[#39FF7A]/10 rounded-xl flex-shrink-0 text-brandGreen dark:text-[#39FF7A]">
+                            <svg class="w-5 h-5 md:w-7 md:h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                             </svg>
                         </div>
-                        <div class="text-left">
-                            <div class="text-3xl font-extrabold text-brandNavy dark:text-[#39FF7A]">300+</div>
-                            <div class="text-sm font-semibold text-gray-500 dark:text-gray-400">Happy Clients</div>
+                        <div>
+                            <div class="text-lg md:text-3xl font-extrabold text-brandNavy dark:text-[#39FF7A]">300+</div>
+                            <div class="text-[10px] md:text-sm font-semibold text-gray-500 dark:text-gray-400 leading-tight">Happy<br class="md:hidden"> Clients</div>
                         </div>
                     </div>
-                    <div class="flex items-center gap-4 justify-center md:justify-start p-4 md:p-2 md:pl-8">
-                        <div class="p-3 bg-[#e8f5e9] dark:bg-[#39FF7A]/10 rounded-2xl flex-shrink-0 text-brandGreen dark:text-[#39FF7A]">
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <div class="flex flex-col items-center gap-1 justify-center px-2 flex-1 text-center">
+                        <div class="p-2 bg-[#e8f5e9] dark:bg-[#39FF7A]/10 rounded-xl flex-shrink-0 text-brandGreen dark:text-[#39FF7A]">
+                            <svg class="w-5 h-5 md:w-7 md:h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                             </svg>
                         </div>
-                        <div class="text-left">
-                            <div class="text-3xl font-extrabold text-brandNavy dark:text-[#39FF7A]">1,800+</div>
-                            <div class="text-sm font-semibold text-gray-500 dark:text-gray-400">Systems Maintained</div>
+                        <div>
+                            <div class="text-lg md:text-3xl font-extrabold text-brandNavy dark:text-[#39FF7A]">1.8K+</div>
+                            <div class="text-[10px] md:text-sm font-semibold text-gray-500 dark:text-gray-400 leading-tight">Systems<br class="md:hidden"> Fixed</div>
                         </div>
                     </div>
                 </div>
+                
+                <!-- Hero Image -->
+                <img src="../mobile_hero/about.png" alt="About Kristen Technologies" class="mt-12 w-full max-w-md mx-auto object-cover">
             </div>
         </section>
         <!-- END: Hero Section -->
@@ -129,12 +132,13 @@ require_once 'includes/header.php';
                 </div>
 
                 <!-- Core Values -->
-                <div class="text-center py-4">
+                <div class="text-center py-4 relative">
                     <h2 class="text-3xl md:text-4xl font-extrabold text-brandNavy dark:text-white mb-12">Our Core <span class="text-[#22C55E] dark:text-[#39FF7A]">Values</span></h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                    
+                    <div class="flex flex-col gap-6 text-left relative pb-8">
                         
                         <!-- Integrity -->
-                        <div class="flex gap-4 p-6 bg-white dark:bg-[#111512] rounded-3xl border border-gray-100 dark:border-white/5 shadow-sm transition-all duration-300 hover:scale-[1.01]">
+                        <div class="sticky top-24 z-10 flex gap-4 p-6 bg-white dark:bg-[#0A0D0A] rounded-3xl border border-gray-200 dark:border-white/10 shadow-lg transition-all duration-300 transform" style="box-shadow: 0 -4px 20px rgba(0,0,0,0.2);">
                             <div class="w-14 h-14 rounded-2xl bg-[#e0f2fe] dark:bg-[#0B3D91]/20 flex items-center justify-center flex-shrink-0 text-[#0B3D91] dark:text-[#39FF7A]">
                                 <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 009 11a5 5 0 00-9-2.753M21.247 12c.003.167.003.333.003.5 0 3.49-1.353 6.666-3.568 9.043m-3.44-2.04l.054-.09A13.916 13.916 0 0018 12a5 5 0 00-9-2.753m10.247-4.148A10.024 10.024 0 0012 2a9.979 9.979 0 00-6.247 2.148M12 12h.01"></path>
@@ -147,7 +151,7 @@ require_once 'includes/header.php';
                         </div>
 
                         <!-- Reliability -->
-                        <div class="flex gap-4 p-6 bg-white dark:bg-[#111512] rounded-3xl border border-gray-100 dark:border-white/5 shadow-sm transition-all duration-300 hover:scale-[1.01]">
+                        <div class="sticky top-24 z-20 flex gap-4 p-6 bg-white dark:bg-[#111512] rounded-3xl border border-gray-200 dark:border-white/10 shadow-lg transition-all duration-300 transform" style="box-shadow: 0 -4px 20px rgba(0,0,0,0.2);">
                             <div class="w-14 h-14 rounded-2xl bg-[#dcfce7] dark:bg-[#22C55E]/10 flex items-center justify-center flex-shrink-0 text-[#22C55E] dark:text-[#39FF7A]">
                                 <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
@@ -160,7 +164,7 @@ require_once 'includes/header.php';
                         </div>
 
                         <!-- Innovation -->
-                        <div class="flex gap-4 p-6 bg-white dark:bg-[#111512] rounded-3xl border border-gray-100 dark:border-white/5 shadow-sm transition-all duration-300 hover:scale-[1.01]">
+                        <div class="sticky top-24 z-30 flex gap-4 p-6 bg-white dark:bg-[#1a1f1b] rounded-3xl border border-gray-200 dark:border-white/10 shadow-lg transition-all duration-300 transform" style="box-shadow: 0 -4px 20px rgba(0,0,0,0.2);">
                             <div class="w-14 h-14 rounded-2xl bg-[#fef9c3] dark:bg-[#eab308]/10 flex items-center justify-center flex-shrink-0 text-[#ca8a04] dark:text-[#39FF7A]">
                                 <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
@@ -173,7 +177,7 @@ require_once 'includes/header.php';
                         </div>
 
                         <!-- Customer Focus -->
-                        <div class="flex gap-4 p-6 bg-white dark:bg-[#111512] rounded-3xl border border-gray-100 dark:border-white/5 shadow-sm transition-all duration-300 hover:scale-[1.01]">
+                        <div class="sticky top-24 z-40 flex gap-4 p-6 bg-white dark:bg-[#202722] rounded-3xl border border-gray-200 dark:border-white/10 shadow-lg transition-all duration-300 transform" style="box-shadow: 0 -4px 20px rgba(0,0,0,0.2);">
                             <div class="w-14 h-14 rounded-2xl bg-[#ffedd5] dark:bg-[#f97316]/10 flex items-center justify-center flex-shrink-0 text-[#ea580c] dark:text-[#39FF7A]">
                                 <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>

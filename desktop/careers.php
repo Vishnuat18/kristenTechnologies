@@ -194,7 +194,7 @@ try {
                     IF YOU HAVE ANY<br>DOUBTS CONTACT US
                 </h2>
                 
-                <form action="save_contact.php" method="POST" enctype="multipart/form-data" class="space-y-8">
+                <form action="../save_careers.php" method="POST" enctype="multipart/form-data" class="space-y-8">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div class="relative">
                             <input type="text" id="name" name="name" required class="w-full bg-transparent border-b border-gray-200 dark:border-white/[0.12] py-3 text-sm focus:outline-none focus:border-[#22C55E] dark:focus:border-[#39FF7A] text-[#0A2640] dark:text-white transition-colors placeholder:text-gray-400 dark:placeholder:text-[#9CA39C]/40" placeholder="Name">
