@@ -19,11 +19,16 @@ RewriteEngine On
 <IfModule mod_rewrite.c>
 
   ########################################
-  # Force HTTPS and www
+  # Force HTTPS and www (only for production domain)
   ########################################
-  RewriteCond %{HTTP_HOST} !^www\.kristenbytes\.com$ [NC,OR]
+  # Force HTTPS
   RewriteCond %{HTTPS} !=on
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Force www only for kristenbytes.com
+  RewriteCond %{HTTP_HOST} ^kristenbytes\.com$ [NC]
   RewriteRule ^ https://www.kristenbytes.com%{REQUEST_URI} [L,R=301]
+
 
   ########################################
   # Redirect .php and .html to extensionless
