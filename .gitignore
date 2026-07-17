@@ -1,0 +1,6 @@
+# Local Configuration Files
+config.php
+
+# Operating System Files
+.DS_Store
+Thumbs.db
