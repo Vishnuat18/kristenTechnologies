@@ -13,8 +13,8 @@ require_once 'includes/header.php';
                 <!-- Soft Mesh Gradient -->
                 <div class="absolute inset-0 bg-gradient-to-br from-[#EEF5FF] via-transparent to-[#F8FAFC] dark:from-[#132c1c]/10 dark:via-transparent dark:to-[#0B3D91]/10 opacity-60"></div>
                 <!-- Background Image (Light/Dark Switch) -->
-                <div class="absolute inset-0 bg-cover bg-center opacity-70 dark:hidden" style="background-image: url('images/Bg/aboutLight.png');"></div>
-                <div class="absolute inset-0 bg-cover bg-center opacity-40 hidden dark:block" style="background-image: url('images/Bg/aboutDark.png');"></div>
+                <div class="absolute inset-0 bg-cover bg-center opacity-70 dark:hidden" style="background-image: url('../images/Bg/aboutLight.png');"></div>
+                <div class="absolute inset-0 bg-cover bg-center opacity-40 hidden dark:block" style="background-image: url('../images/Bg/aboutDark.png');"></div>
             </div>
 
             <!-- Bottom fade-out so image dissolves into page bg (both modes) -->
@@ -241,7 +241,7 @@ require_once 'includes/header.php';
                     <!-- Right: Image -->
                     <div class="relative group max-w-lg mx-auto lg:mr-0">
                         <div class="absolute inset-0 bg-[#22C55E] dark:bg-[#39FF7A] opacity-5 rounded-[32px] blur-xl group-hover:opacity-10 transition-opacity pointer-events-none"></div>
-                        <img src="images/why_choose_us_globe.png" alt="Why Choose Us Globe" class="w-full h-[300px] object-cover rounded-[24px] shadow-lg border border-gray-100 dark:border-white/5 group-hover:scale-[1.01] transition-transform duration-300" / loading="lazy" decoding="async">
+                        <img src="../images/why_choose_us_globe.png" alt="Why Choose Us Globe" class="w-full h-[300px] object-cover rounded-[24px] shadow-lg border border-gray-100 dark:border-white/5 group-hover:scale-[1.01] transition-transform duration-300" / loading="lazy" decoding="async">
                     </div>
                 </div>
 

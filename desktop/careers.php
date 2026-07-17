@@ -2,7 +2,7 @@
 $page_title = "Careers | Kristen Byte Solutions";
 $page_description = "Join Kristen Technologies. Openings for IT support executive, service engineer, CCTV technician, and network engineers in Salem.";
 require_once 'includes/header.php';
-require_once 'db.php';
+require_once '../db.php';
 
 // Fetch active jobs
 try {
@@ -23,8 +23,8 @@ try {
                 <!-- Soft Mesh Gradient -->
                 <div class="absolute inset-0 bg-gradient-to-br from-[#EEF5FF] via-transparent to-[#F8FAFC] dark:from-[#132c1c]/10 dark:via-transparent dark:to-[#0B3D91]/10 opacity-60"></div>
                 <!-- Background Image (Light/Dark Switch) -->
-                <div class="absolute inset-0 bg-cover bg-center opacity-70 dark:hidden" style="background-image: url('images/Bg/careerLight.png');"></div>
-                <div class="absolute inset-0 bg-cover bg-center opacity-40 hidden dark:block" style="background-image: url('images/Bg/careerDark.png');"></div>
+                <div class="absolute inset-0 bg-cover bg-center opacity-70 dark:hidden" style="background-image: url('../images/Bg/careerLight.png');"></div>
+                <div class="absolute inset-0 bg-cover bg-center opacity-40 hidden dark:block" style="background-image: url('../images/Bg/careerDark.png');"></div>
             </div>
 
             <!-- Bottom fade-out so image dissolves into page bg (both modes) -->
@@ -154,7 +154,7 @@ try {
                         
                         <!-- Greyscale Recruitment Image -->
                         <div class="relative rounded-2xl overflow-hidden aspect-[4/3] bg-gray-200 dark:bg-white/[0.04]">
-                            <img src="images/about-02.png" alt="Hiring Team" class="w-full h-full object-cover grayscale block" / loading="lazy" decoding="async">
+                            <img src="../images/about-02.png" alt="Hiring Team" class="w-full h-full object-cover grayscale block" / loading="lazy" decoding="async">
                         </div>
                         
                         <div class="space-y-4 pt-2">

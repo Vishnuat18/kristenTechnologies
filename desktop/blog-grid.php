@@ -2,7 +2,7 @@
 $page_title = "Blog | Kristen Byte Solutions";
 $page_description = "";
 require_once 'includes/header.php';
-require_once 'db.php';
+require_once '../db.php';
 
 // Fetch blog posts
 try {

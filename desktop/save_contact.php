@@ -5,7 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 // --- 1. Include Database Config ---
-require_once 'db.php';
+require_once '../db.php';
 
 // --- 2. Get form data safely ---
 // Accept both `phone` and `contactno` from form

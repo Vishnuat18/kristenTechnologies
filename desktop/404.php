@@ -9,7 +9,7 @@ require_once 'includes/header.php';
         <!-- BEGIN: 404 Section -->
         <section class="max-w-3xl mx-auto px-6 text-center">
             <div class="bg-gray-50 dark:bg-surface-bright rounded-3xl p-12 shadow-sm border border-gray-100 dark:border-white/5 transition-all">
-                <img src="images/404.svg" alt="404 Illustration" class="max-w-[280px] w-full mx-auto mb-10 opacity-90 dark:opacity-80 drop-shadow-md" />
+                <img src="../images/404.svg" alt="404 Illustration" class="max-w-[280px] w-full mx-auto mb-10 opacity-90 dark:opacity-80 drop-shadow-md" />
                 
                 <h1 class="text-3xl md:text-5xl font-extrabold text-brandNavy dark:text-white font-serif mb-6 tracking-tight">Under Construction..!</h1>
                 

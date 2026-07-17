@@ -13,8 +13,8 @@ require_once 'includes/header.php';
                 <!-- Soft Mesh Gradient -->
                 <div class="absolute inset-0 bg-gradient-to-br from-[#EEF5FF] via-transparent to-[#F8FAFC] dark:from-[#132c1c]/10 dark:via-transparent dark:to-[#0B3D91]/10 opacity-60"></div>
                 <!-- Background Image (Light/Dark Switch) -->
-                <div class="absolute inset-0 bg-cover bg-center opacity-70 dark:hidden" style="background-image: url('images/Bg/contactLight.png');"></div>
-                <div class="absolute inset-0 bg-cover bg-center opacity-40 hidden dark:block" style="background-image: url('images/Bg/contactDark.png');"></div>
+                <div class="absolute inset-0 bg-cover bg-center opacity-70 dark:hidden" style="background-image: url('../images/Bg/contactLight.png');"></div>
+                <div class="absolute inset-0 bg-cover bg-center opacity-40 hidden dark:block" style="background-image: url('../images/Bg/contactDark.png');"></div>
             </div>
 
             <!-- Bottom fade-out so image dissolves into page bg (both modes) -->
@@ -193,7 +193,7 @@ require_once 'includes/header.php';
 
                 <div class="flex flex-col md:flex-row items-center gap-8 relative z-10 w-full">
                     <div class="w-32 h-32 md:w-40 md:h-40 shrink-0 rounded-[2rem] overflow-hidden">
-                        <img src="images/contact/3d_headphones.png" alt="Headphones" class="w-full h-full object-cover" />
+                        <img src="../images/contact/3d_headphones.png" alt="Headphones" class="w-full h-full object-cover" />
                     </div>
                     
                     <div class="text-center md:text-left flex-1">

@@ -24,7 +24,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
     <link rel="manifest" href="manifest.json" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- Tailwind CSS v3 with Plugins -->
@@ -262,7 +262,7 @@
             <!-- Logo (Left) -->
             <a href="index.php" class="flex items-center" data-purpose="logo">
                 <!-- We should invert the logo in dark mode if it's black -->
-                <img src="images/kristen_logo.png" alt="Kristen Technologies Logo"
+                <img src="../images/kristen_logo.png" alt="Kristen Technologies Logo"
                     class="h-12 w-auto transition-all " />
             </a>
 

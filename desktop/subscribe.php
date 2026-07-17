@@ -3,7 +3,7 @@
 // -----------------
 // CONNECT TO DB
 // -----------------
-require_once 'db.php';
+require_once '../db.php';
 
 // -----------------
 // HANDLE FORM SUBMIT

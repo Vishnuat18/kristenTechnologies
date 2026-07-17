@@ -13,8 +13,8 @@ require_once 'includes/header.php';
                 <!-- Soft Mesh Gradient -->
                 <div class="absolute inset-0 bg-gradient-to-br from-[#EEF5FF] via-transparent to-[#F8FAFC] dark:from-[#132c1c]/10 dark:via-transparent dark:to-[#0B3D91]/10 opacity-60"></div>
                 <!-- Background Image (Light/Dark Switch) -->
-                <div class="absolute inset-0 bg-cover bg-center opacity-70 dark:hidden" style="background-image: url('images/Bg/serviceLight.png');"></div>
-                <div class="absolute inset-0 bg-cover bg-center opacity-40 hidden dark:block" style="background-image: url('images/Bg/serviceDark.png');"></div>
+                <div class="absolute inset-0 bg-cover bg-center opacity-70 dark:hidden" style="background-image: url('../images/Bg/serviceLight.png');"></div>
+                <div class="absolute inset-0 bg-cover bg-center opacity-40 hidden dark:block" style="background-image: url('../images/Bg/serviceDark.png');"></div>
             </div>
 
             <!-- Bottom fade-out so image dissolves into page bg (both modes) -->
@@ -86,7 +86,7 @@ require_once 'includes/header.php';
                 <!-- Video Column (Right) -->
                 <div class="flex-1 w-full max-w-xl">
                     <div class="relative rounded-3xl overflow-hidden shadow-lg border border-gray-100 dark:border-white/5 bg-gray-50 dark:bg-[#111512]">
-                        <video class="w-full h-[320px] object-cover block" src="videos/computer&laptop.mp4" loop muted playsinline data-autoplay-on-scroll></video>
+                        <video class="w-full h-[320px] object-cover block" src="../videos/computer&laptop.mp4" loop muted playsinline data-autoplay-on-scroll></video>
                     </div>
                 </div>
             </div>
@@ -143,7 +143,7 @@ require_once 'includes/header.php';
                 <!-- Video Column (Left) -->
                 <div class="flex-1 w-full max-w-xl">
                     <div class="relative rounded-3xl overflow-hidden shadow-lg border border-gray-100 dark:border-white/5 bg-gray-50 dark:bg-[#111512]">
-                        <video class="w-full h-[320px] object-cover block" src="videos/data.mp4" loop muted playsinline data-autoplay-on-scroll></video>
+                        <video class="w-full h-[320px] object-cover block" src="../videos/data.mp4" loop muted playsinline data-autoplay-on-scroll></video>
                     </div>
                 </div>
             </div>
@@ -200,7 +200,7 @@ require_once 'includes/header.php';
                 <!-- Video Column (Right) -->
                 <div class="flex-1 w-full max-w-xl">
                     <div class="relative rounded-3xl overflow-hidden shadow-lg border border-gray-100 dark:border-white/5 bg-gray-50 dark:bg-[#111512]">
-                        <video class="w-full h-[320px] object-cover block" src="videos/netowrk.mp4" loop muted playsinline data-autoplay-on-scroll></video>
+                        <video class="w-full h-[320px] object-cover block" src="../videos/netowrk.mp4" loop muted playsinline data-autoplay-on-scroll></video>
                     </div>
                 </div>
             </div>
@@ -257,7 +257,7 @@ require_once 'includes/header.php';
                 <!-- Video Column (Left) -->
                 <div class="flex-1 w-full max-w-xl">
                     <div class="relative rounded-3xl overflow-hidden shadow-lg border border-gray-100 dark:border-white/5 bg-gray-50 dark:bg-[#111512]">
-                        <video class="w-full h-[320px] object-cover block" src="videos/cctv.mp4" loop muted playsinline data-autoplay-on-scroll></video>
+                        <video class="w-full h-[320px] object-cover block" src="../videos/cctv.mp4" loop muted playsinline data-autoplay-on-scroll></video>
                     </div>
                 </div>
             </div>
@@ -314,7 +314,7 @@ require_once 'includes/header.php';
                 <!-- Video Column (Right) -->
                 <div class="flex-1 w-full max-w-xl">
                     <div class="relative rounded-3xl overflow-hidden shadow-lg border border-gray-100 dark:border-white/5 bg-gray-50 dark:bg-[#111512]">
-                        <video class="w-full h-[320px] object-cover block" src="videos/printer.mp4" loop muted playsinline data-autoplay-on-scroll></video>
+                        <video class="w-full h-[320px] object-cover block" src="../videos/printer.mp4" loop muted playsinline data-autoplay-on-scroll></video>
                     </div>
                 </div>
             </div>
@@ -371,7 +371,7 @@ require_once 'includes/header.php';
                 <!-- Video Column (Left) -->
                 <div class="flex-1 w-full max-w-xl">
                     <div class="relative rounded-3xl overflow-hidden shadow-lg border border-gray-100 dark:border-white/5 bg-gray-50 dark:bg-[#111512]">
-                        <video class="w-full h-[320px] object-cover block" src="videos/amc.mp4" loop muted playsinline data-autoplay-on-scroll></video>
+                        <video class="w-full h-[320px] object-cover block" src="../videos/amc.mp4" loop muted playsinline data-autoplay-on-scroll></video>
                     </div>
                 </div>
             </div>
@@ -382,8 +382,8 @@ require_once 'includes/header.php';
         <section class="max-w-6xl mx-auto px-8 md:px-12 py-12 mb-16">
             <div class="relative rounded-[32px] overflow-hidden shadow-2xl border border-gray-200 dark:border-white/[0.08] min-h-[380px] md:min-h-[440px] flex items-center bg-gray-50 dark:bg-[#0A0D0A]">
                 <!-- Background Theme Images -->
-                <img src="images/cta/lightcta.png" alt="Available Soon Banner" class="absolute inset-0 w-full h-full object-cover block dark:hidden" / loading="lazy" decoding="async">
-                <img src="images/cta/darkcta.png" alt="Available Soon Banner" class="absolute inset-0 w-full h-full object-cover hidden dark:block" / loading="lazy" decoding="async">
+                <img src="../images/cta/lightcta.png" alt="Available Soon Banner" class="absolute inset-0 w-full h-full object-cover block dark:hidden" / loading="lazy" decoding="async">
+                <img src="../images/cta/darkcta.png" alt="Available Soon Banner" class="absolute inset-0 w-full h-full object-cover hidden dark:block" / loading="lazy" decoding="async">
                 
                 <!-- Content Overlay (Grid: Left text/buttons, Right empty/mockup) -->
                 <div class="relative z-10 w-full grid grid-cols-1 lg:grid-cols-2 gap-8 px-8 md:px-16 py-12">
