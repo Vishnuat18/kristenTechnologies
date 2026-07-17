@@ -9,6 +9,9 @@ RUN apt-get update && apt-get install -y libpq-dev \
 # Enable Apache rewrite module for handling .htaccess rules
 RUN a2enmod rewrite
 
+# Enable AllowOverride All to allow .htaccess custom routing/redirect rules
+RUN sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf
+
 # Copy application source code
 COPY . /var/www/html/
 
