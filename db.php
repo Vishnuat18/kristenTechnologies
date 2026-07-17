@@ -1,9 +1,9 @@
 <?php
-$db_host = "localhost";
-$db_port = "5432";
-$db_name = "kristen_careers_db"; // Can rename to kristen_db later
-$db_user = "postgres";
-$db_pass = "Semester6!";
+$db_host = getenv('DB_HOST') ?: "localhost";
+$db_port = getenv('DB_PORT') ?: "5432";
+$db_name = getenv('DB_NAME') ?: "kristen_careers_db";
+$db_user = getenv('DB_USER') ?: "postgres";
+$db_pass = getenv('DB_PASSWORD') ?: "Semester6!";
 
 try {
     $dsn = "pgsql:host=$db_host;port=$db_port;dbname=$db_name";
