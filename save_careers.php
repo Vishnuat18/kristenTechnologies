@@ -1,10 +1,19 @@
 <?php
 require_once __DIR__ . '/api/resend.php';
 
+enable_cors();
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['name'] ?? '';
-    $phone = $_POST['phone'] ?? '';
-    $email = $_POST['email'] ?? '';
+    $rawInput = file_get_contents('php://input');
+    $jsonInput = json_decode($rawInput, true);
+
+    $name = $_POST['name'] ?? ($jsonInput['name'] ?? ($jsonInput['fullname'] ?? ''));
+    $phone = $_POST['phone'] ?? ($jsonInput['phone'] ?? '');
+    $email = $_POST['email'] ?? ($jsonInput['email'] ?? '');
+
+    if (empty($name) || empty($phone) || empty($email)) {
+        send_api_response(false, 'Please fill in required fields (Name, Phone, Email).');
+    }
 
     $htmlBody = "
     <h2>New General Career Inquiry</h2>
@@ -27,10 +36,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = send_resend_email("New Career Inquiry: " . $name, $htmlBody, $attachments);
 
     if ($result['success']) {
-        echo "<script>alert('Thank you! Your resume has been submitted successfully.'); window.history.back();</script>";
+        send_api_response(true, 'Thank you! Your resume has been submitted successfully.');
     } else {
-        echo "<script>alert('Error submitting your application. Please try again later.'); window.history.back();</script>";
+        send_api_response(false, 'Error submitting your application. Please try again later.');
     }
 } else {
-    header("Location: /");
+    send_api_response(false, 'Invalid request method. Only POST is supported.');
 }
+

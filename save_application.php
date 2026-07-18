@@ -1,13 +1,22 @@
 <?php
 require_once __DIR__ . '/api/resend.php';
 
+enable_cors();
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $jobTitle = $_POST['job_title'] ?? 'General Application';
-    $fullname = $_POST['fullname'] ?? '';
-    $phone = $_POST['phone'] ?? '';
-    $email = $_POST['email'] ?? '';
-    $portfolio = $_POST['portfolio'] ?? '';
-    $cover_letter = $_POST['cover_letter'] ?? '';
+    $rawInput = file_get_contents('php://input');
+    $jsonInput = json_decode($rawInput, true);
+
+    $jobTitle = $_POST['job_title'] ?? ($jsonInput['job_title'] ?? 'General Application');
+    $fullname = $_POST['fullname'] ?? ($jsonInput['fullname'] ?? ($jsonInput['name'] ?? ''));
+    $phone = $_POST['phone'] ?? ($jsonInput['phone'] ?? '');
+    $email = $_POST['email'] ?? ($jsonInput['email'] ?? '');
+    $portfolio = $_POST['portfolio'] ?? ($jsonInput['portfolio'] ?? '');
+    $cover_letter = $_POST['cover_letter'] ?? ($jsonInput['cover_letter'] ?? '');
+
+    if (empty($fullname) || empty($phone) || empty($email)) {
+        send_api_response(false, 'Please fill in required fields (Name, Phone, Email).');
+    }
 
     $htmlBody = "
     <h2>New Job Application: " . htmlspecialchars($jobTitle) . "</h2>
@@ -32,10 +41,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = send_resend_email("New Job Application: " . $jobTitle, $htmlBody, $attachments);
 
     if ($result['success']) {
-        echo "<script>alert('Thank you! Your application for " . addslashes($jobTitle) . " has been submitted successfully.'); window.history.back();</script>";
+        send_api_response(true, 'Thank you! Your application for ' . $jobTitle . ' has been submitted successfully.');
     } else {
-        echo "<script>alert('Error submitting your application. Please try again later.'); window.history.back();</script>";
+        send_api_response(false, 'Error submitting your application. Please try again later.');
     }
 } else {
-    header("Location: /");
+    send_api_response(false, 'Invalid request method. Only POST is supported.');
 }
+

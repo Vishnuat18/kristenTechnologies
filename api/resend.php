@@ -51,3 +51,39 @@ function send_resend_email($subject, $htmlBody, $attachments = []) {
         'http_code' => $httpCode
     ];
 }
+
+function enable_cors() {
+    header("Access-Control-Allow-Origin: *");
+    header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+    header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
+    if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+        http_response_code(200);
+        exit();
+    }
+}
+
+function is_json_request() {
+    $accept = $_SERVER['HTTP_ACCEPT'] ?? '';
+    $contentType = $_SERVER['CONTENT_TYPE'] ?? '';
+    return strpos($accept, 'application/json') !== false || 
+           strpos($contentType, 'application/json') !== false ||
+           isset($_POST['is_json']) ||
+           isset($_GET['is_json']);
+}
+
+function send_api_response($success, $message, $extraData = []) {
+    if (is_json_request()) {
+        header('Content-Type: application/json');
+        http_response_code($success ? 200 : 400);
+        echo json_encode(array_merge([
+            'success' => $success,
+            'message' => $message
+        ], $extraData));
+        exit();
+    } else {
+        $escapedMsg = addslashes($message);
+        echo "<script>alert('{$escapedMsg}'); window.history.back();</script>";
+        exit();
+    }
+}
+
